@@ -5,13 +5,21 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { FAB } from 'react-native-paper';
 
-export default function TabTwoScreen() {
+export default function WisdomScreen() {
+  var count = 0
+  var crossIt = () => {
+    count += 1
+
+
+    console.log('cross it',count)
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two bro</Text>
+      <Text style={styles.title}>WisdomScreen</Text>
       <FAB style={styles.fab}
     icon="celtic-cross"
-    onPress={() => console.log('Pressed fab')}
+    onPress={() => crossIt()}
   />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
