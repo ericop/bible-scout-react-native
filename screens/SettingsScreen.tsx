@@ -5,7 +5,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { FAB } from 'react-native-paper';
 
-export default function TabTwoScreen() {
+export default function SettingsScreen() {
   var count = 0
   var crossIt = () => {
     count += 1
@@ -22,7 +22,7 @@ export default function TabTwoScreen() {
     onPress={() => crossIt()}
   />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <EditScreenInfo path="/screens/SettingsScreen.tsx" />
     </View>
   );
 }

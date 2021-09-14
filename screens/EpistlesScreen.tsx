@@ -5,7 +5,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { FAB } from 'react-native-paper';
 
-export default function GospelsScreen() {
+export default function EpistlesScreen() {
   var count = 0
   var crossIt = () => {
     count += 1
@@ -16,13 +16,13 @@ export default function GospelsScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>GospelsScreen</Text>
+      <Text style={styles.title}>EpistlesScreen</Text>
       <FAB style={styles.fab}
     icon="celtic-cross"
     onPress={() => crossIt()}
   />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <EditScreenInfo path="/screens/EpistlesScreen.tsx" />
     </View>
   );
 }
