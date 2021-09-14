@@ -18,7 +18,8 @@ import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import { BottomNavigation, Text } from 'react-native-paper';
+import { Appbar, Menu, Text } from 'react-native-paper';
+import { NativeStackHeaderProps } from '@react-navigation/native-stack/lib/typescript/src/types';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -39,7 +40,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Root" component={TopAppBar} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
@@ -52,25 +53,24 @@ function RootNavigator() {
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const StackNav = createNativeStackNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
+function TopAppBar() {
   const colorScheme = useColorScheme();
 
   //TODO implement https://callstack.github.io/react-native-paper/bottom-navigation.html#usage
 
   return (
-    <BottomTab.Navigator
+    <StackNav.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        header: (prop:NativeStackHeaderProps) => <CustomNavBar {...prop} />,
       }}>
-      <BottomTab.Screen
+      <StackNav.Screen
         name="Home"
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           // this is just to test the modal
           // headerRight: () => (
           //   <Pressable
@@ -88,15 +88,39 @@ function BottomTabNavigator() {
           // ),
         })}
       />
-      <BottomTab.Screen
+      <StackNav.Screen
         name="Settings"
         component={SettingsScreen}
         options={{
           title: 'Tab 2',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
-    </BottomTab.Navigator>
+    </StackNav.Navigator>
+  );
+}
+
+function CustomNavBar(props:NativeStackHeaderProps) {
+  const [visible, setVisible] = React.useState(false);
+  const openMenu = () => setVisible(true);
+  const closeMenu = () => setVisible(false);
+
+  return (
+    <Appbar.Header>
+      {props.navigation.canGoBack() ? <Appbar.BackAction onPress={props.navigation.goBack} /> : null}
+      <Appbar.Content title="BibleScout" />
+      {!props.navigation.canGoBack() ? (
+        <Menu
+          visible={visible}
+          onDismiss={closeMenu}
+          anchor={
+            <Appbar.Action icon="menu" color="white" onPress={openMenu} />
+          }>
+          <Menu.Item onPress={() => {console.log('Option 1 was pressed')}} title="Option 1" />
+          <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
+          <Menu.Item onPress={() => {console.log('Option 3 was pressed')}} title="Option 3" disabled />
+        </Menu>
+      ) : null}
+    </Appbar.Header>
   );
 }
 

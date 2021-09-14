@@ -24,6 +24,9 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
     <Button icon="email-outline" mode="contained" onPress={() => console.log('Epistles')}>
     Epistles
     </Button>
+    <Button  onPress={() => navigation.navigate('Settings')}n>
+    Go to Settings   
+    </Button>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/HomeScreen.tsx" />
     </View>
