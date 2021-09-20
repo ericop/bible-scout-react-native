@@ -20,13 +20,14 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../typ
 import LinkingConfiguration from './LinkingConfiguration';
 import { Appbar, Menu, Text } from 'react-native-paper';
 import { NativeStackHeaderProps } from '@react-navigation/native-stack/lib/typescript/src/types';
+import DrawerNavigator from './DrawerNavigator';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 }
@@ -108,18 +109,7 @@ function CustomNavBar(props:NativeStackHeaderProps) {
     <Appbar.Header>
       {props.navigation.canGoBack() ? <Appbar.BackAction onPress={props.navigation.goBack} /> : null}
       <Appbar.Content title="BibleScout" />
-      {!props.navigation.canGoBack() ? (
-        <Menu
-          visible={visible}
-          onDismiss={closeMenu}
-          anchor={
-            <Appbar.Action icon="menu" color="white" onPress={openMenu} />
-          }>
-          <Menu.Item onPress={() => {console.log('Option 1 was pressed')}} title="Option 1" />
-          <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
-          <Menu.Item onPress={() => {console.log('Option 3 was pressed')}} title="Option 3" disabled />
-        </Menu>
-      ) : null}
+      <Appbar.Action icon="menu" color="white" onPress={props.navigation.getState} />
     </Appbar.Header>
   );
 }
