@@ -3,9 +3,11 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { FAB } from 'react-native-paper';
+import { Appbar, FAB } from 'react-native-paper';
+import { DrawerActions } from '@react-navigation/native';
+import { RootTabScreenProps } from '../types';
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }: RootTabScreenProps<'Settings'>) {
   var count = 0
   var crossIt = () => {
     count += 1
@@ -13,10 +15,18 @@ export default function SettingsScreen() {
 
     console.log('cross it',count)
   }
+  const _handleSearch = () => console.log('Searching');
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two bro.</Text>
+      <Appbar>
+      <Appbar.Action icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
+      <Appbar.Header>
+        <Appbar.Content title="Settings" subtitle="Light or Dark Mode" />
+        <Appbar.Action icon="book" onPress={_handleSearch} />
+      </Appbar.Header>
+      </Appbar>
+      <Text style={styles.title}>Pick your settings bro</Text>
       <FAB style={styles.fab}
     icon="celtic-cross"
     onPress={() => crossIt()}

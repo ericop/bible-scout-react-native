@@ -4,12 +4,22 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
-import { Button } from 'react-native-paper';
+import { Appbar, Button } from 'react-native-paper';
+import { DrawerActions } from '@react-navigation/native';
 
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
+  const _handleSearch = () => console.log('Searching');
   return (
+    
     <View style={styles.container}>
+      <Appbar>
+      <Appbar.Action icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
+      <Appbar.Header>
+        <Appbar.Content title="Home" subtitle="Reading Plans Below" />
+        <Appbar.Action icon="book" onPress={_handleSearch} />
+      </Appbar.Header>
+      </Appbar>
       <Text style={styles.title}>Tab One</Text>
       <Text style={styles.container}>Eop</Text>
       <Button icon="receipt" mode="contained" onPress={() => console.log('Pressed law')}>

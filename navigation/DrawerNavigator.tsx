@@ -1,7 +1,15 @@
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { DrawerContentScrollView, createDrawerNavigator } from "@react-navigation/drawer";
 import SettingsScreen from "../screens/SettingsScreen";
 import HomeScreen from '../screens/HomeScreen';
 import { RootStackParamList } from "../types";
+import {   useTheme,
+    Avatar,
+    Drawer,
+    Text,
+    TouchableRipple,
+    Switch} from "react-native-paper";
+import { View } from "react-native";
+import * as React from 'react';
 
 // https://github.com/ChanakaUOMIT/React-Native-Root-boiler-plate/blob/master/src/navigation/drawerNavigation/DrawerNavigator.js
 
@@ -21,13 +29,63 @@ Settings: {
   }   }
 }
 
-const Drawer = createDrawerNavigator();
+const MyDrawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <Drawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings Screen' }} />
-    </Drawer.Navigator>
+    <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props}/>}>
+      <MyDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      {/* with headerShown: false the app bar moves to the top */}
+      <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings Screen'}} />
+    </MyDrawer.Navigator>
   );
 }
+
+// https://callstack.github.io/react-native-paper/theming-with-react-navigation.html
+export function DrawerContent(props: any) {
+    const paperTheme = useTheme();
+    const [active, setActive] = React.useState('');
+  
+    const toSettings = () => {
+        setActive('Settings')
+        console.log('to setting')
+        console.log(props)
+        props.navigation.navigate('Settings')
+    }
+
+    return (
+      <DrawerContentScrollView {...props}>
+            <Drawer.Section title="Bible Scout">
+        <Drawer.Item
+            label="Home"
+            icon='home'
+            active={active === 'Home'}
+            onPress={() => props.navigation.navigate('Home')}
+        />
+        <Drawer.Item
+            label="Settings"
+            icon='wrench'
+            active={active === 'Settings'}
+            onPress={() => toSettings()}
+        />
+        </Drawer.Section>
+        <Drawer.Section title="Preferences">
+            <Drawer.Item
+                label="Color Theme"
+                icon='camera'
+                active={active === 'Settings'}
+                onPress={() => setActive('Settings')}
+            >
+            <TouchableRipple onPress={props.toggleTheme}>
+                {/* <View style={styles.preference}>
+                <Text>Dark Theme</Text>
+                <View pointerEvents="none">
+                    <Switch value={theme.dark} />
+                </View>
+                </View> */}
+            </TouchableRipple>
+          </Drawer.Item>
+        </Drawer.Section>
+      </DrawerContentScrollView>
+    );
+  }
