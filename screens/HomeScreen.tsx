@@ -20,7 +20,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
         <Appbar.Action icon="book" onPress={_handleSearch} />
       </Appbar.Header>
       </Appbar> */}
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Title of home screen</Text>
       <Text style={styles.container}>Eop</Text>
       <Button icon="receipt" mode="contained" onPress={() => console.log('Pressed law')}>
       Law And Prophets
