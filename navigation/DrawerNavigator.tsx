@@ -16,60 +16,23 @@ import LawAndProphetsScreen from "../screens/LawAndProphetsScreen";
 import WisdomScreen from "../screens/WisdomScreen";
 import GospelsScreen from "../screens/GospelsScreen";
 import EpistlesScreen from "../screens/EpistlesScreen";
+import Themes from "../constants/Themes";
 
 // https://github.com/ChanakaUOMIT/React-Native-Root-boiler-plate/blob/master/src/navigation/drawerNavigation/DrawerNavigator.js
 
 // https://stackoverflow.com/questions/51948040/react-native-drawer-navigation-with-stack-navigator
 
-const paramsList = {
-  HomeScreen: {
-    screen: HomeScreen,
-    navigationOptions: {
-      drawerLabel: 'HomeScreen',
-      //drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
-    }
-  },
-  LawAndProphets: {
-    screen: LawAndProphetsScreen,
-    navigationOptions: {
-      drawerLabel: 'LawAndProphetsScreen',
-    }
-  },
-  Wisdom: {
-    screen: WisdomScreen,
-    navigationOptions: {
-      drawerLabel: 'WisdomScreen',
-    }
-  },
-  Gospels: {
-    screen: GospelsScreen,
-    navigationOptions: {
-      drawerLabel: 'GospelsScreen',
-    }
-  },
-  Epistles: {
-    screen: EpistlesScreen,
-    navigationOptions: {
-      drawerLabel: 'EpistlesScreen',
-    }
-  },
-  Settings: {
-    screen: SettingsScreen,
-    navigationOptions: {
-      drawerLabel: 'SettingsScreen',
-    }
-  },
-}
 
 const MyDrawer = createDrawerNavigator();
 
-export default function DrawerNavigator() {
+export default function DrawerNavigator(propsIn: any) {
   return (
-    <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-      <MyDrawer.Screen name="Home" component={HomeScreen}
-      // options={{ headerShown: false }} 
-      />
-      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{ title: 'Law And Prophets' }} />
+    <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props} />} screenOptions={{
+      headerStyle: {
+        backgroundColor: propsIn.theme === 'dark' ? Themes.dark.colors.accent : Themes.light.colors.primary
+      } }}>
+      <MyDrawer.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }}/>
+      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'Law And Prophets',}} />
       <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom' }} />
       <MyDrawer.Screen name="Gospels" component={GospelsScreen} options={{ title: 'Gospels' }} />
       <MyDrawer.Screen name="Epistle" component={EpistlesScreen} options={{ title: 'Epistle' }} />
@@ -143,4 +106,44 @@ export function DrawerContent(props: any) {
       </Drawer.Section>
     </DrawerContentScrollView >
   );
+}
+
+const paramsList = {
+  HomeScreen: {
+    screen: HomeScreen,
+    navigationOptions: {
+      drawerLabel: 'HomeScreen',
+      //drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+  LawAndProphets: {
+    screen: LawAndProphetsScreen,
+    navigationOptions: {
+      drawerLabel: 'LawAndProphetsScreen',
+    }
+  },
+  Wisdom: {
+    screen: WisdomScreen,
+    navigationOptions: {
+      drawerLabel: 'WisdomScreen',
+    }
+  },
+  Gospels: {
+    screen: GospelsScreen,
+    navigationOptions: {
+      drawerLabel: 'GospelsScreen',
+    }
+  },
+  Epistles: {
+    screen: EpistlesScreen,
+    navigationOptions: {
+      drawerLabel: 'EpistlesScreen',
+    }
+  },
+  Settings: {
+    screen: SettingsScreen,
+    navigationOptions: {
+      drawerLabel: 'SettingsScreen',
+    }
+  },
 }

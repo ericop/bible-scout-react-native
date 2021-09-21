@@ -1,5 +1,5 @@
 import { DefaultTheme, DarkTheme, Provider as PaperProvider } from 'react-native-paper';
-
+const lightTeal = '#00A6b8';
 const primaryTeal = '#009688';
 const accentOrange = '#ff9800';
 const darkGrayBackground = '#37474f';
@@ -14,6 +14,7 @@ export default {
       text: darkGrayBackground,
       primary: primaryTeal,
       accent: accentOrange,
+      backDrop: accentOrange,
     },
   },
   dark: {
@@ -21,9 +22,12 @@ export default {
     roundness: 5,
     colors: {
       ...DarkTheme.colors,
+      text: accentOrange,
       background: darkGrayBackground,
       primary: primaryTeal,
       accent: accentOrange,
+      backDrop: primaryTeal,
+      card: lightTeal,
     },
   }
 };
