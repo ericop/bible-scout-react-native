@@ -13,13 +13,13 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     
     <View style={styles.container}>
-      <Appbar>
+      {/* <Appbar>
       <Appbar.Action icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
       <Appbar.Header>
-        <Appbar.Content title="Home" subtitle="Reading Plans Below" />
+        <Appbar.Content title="Home" subtitle="Reading Plans Below!" />
         <Appbar.Action icon="book" onPress={_handleSearch} />
       </Appbar.Header>
-      </Appbar>
+      </Appbar> */}
       <Text style={styles.title}>Tab One</Text>
       <Text style={styles.container}>Eop</Text>
       <Button icon="receipt" mode="contained" onPress={() => console.log('Pressed law')}>

@@ -34,9 +34,11 @@ const MyDrawer = createDrawerNavigator();
 export default function DrawerNavigator() {
   return (
     <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props}/>}>
-      <MyDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <MyDrawer.Screen name="Home" component={HomeScreen} 
+      // options={{ headerShown: false }} 
+      />
       {/* with headerShown: false the app bar moves to the top */}
-      <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings Screen'}} />
+      <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings Screenz'}} />
     </MyDrawer.Navigator>
   );
 }
@@ -46,10 +48,18 @@ export function DrawerContent(props: any) {
     const paperTheme = useTheme();
     const [active, setActive] = React.useState('');
   
+
+    const toHome = () => {
+      setActive('Home')
+      console.log('to home')
+      //console.log(props)
+      props.navigation.navigate('Home')
+    }
+
     const toSettings = () => {
         setActive('Settings')
         console.log('to setting')
-        console.log(props)
+        //console.log(props)
         props.navigation.navigate('Settings')
     }
 
@@ -60,7 +70,7 @@ export function DrawerContent(props: any) {
             label="Home"
             icon='home'
             active={active === 'Home'}
-            onPress={() => props.navigation.navigate('Home')}
+            onPress={() => toHome()}
         />
         <Drawer.Item
             label="Settings"
@@ -73,8 +83,6 @@ export function DrawerContent(props: any) {
             <Drawer.Item
                 label="Color Theme"
                 icon='camera'
-                active={active === 'Settings'}
-                onPress={() => setActive('Settings')}
             >
             <TouchableRipple onPress={props.toggleTheme}>
                 {/* <View style={styles.preference}>

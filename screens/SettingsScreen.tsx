@@ -19,13 +19,13 @@ export default function SettingsScreen({ navigation }: RootTabScreenProps<'Setti
 
   return (
     <View style={styles.container}>
-      <Appbar>
+      {/* <Appbar>
       <Appbar.Action icon="menu" onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />
       <Appbar.Header>
         <Appbar.Content title="Settings" subtitle="Light or Dark Mode" />
         <Appbar.Action icon="book" onPress={_handleSearch} />
       </Appbar.Header>
-      </Appbar>
+      </Appbar> */}
       <Text style={styles.title}>Pick your settings bro</Text>
       <FAB style={styles.fab}
     icon="celtic-cross"
