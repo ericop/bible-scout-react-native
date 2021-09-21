@@ -1,19 +1,25 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+const primaryTeal = '#009688';
+const accentOrange = '#ff9800';
+const darkGrayBackground = '#37474f';
+const almostBlackText = 'rgba(0,0,0,0.87)';
 
 export default {
   light: {
-    text: '#000',
+    dark: false,
+    text: 'rgba(0,0,0,0.87)',
     background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
+    primary: primaryTeal,
+    card: '#009688',
+    border: 'rgba(0,0,0,0.87)',
+    notification: '#ff9800'
   },
   dark: {
+    dark: true,
     text: '#fff',
-    background: '#000',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
+    background: '#37474f',
+    primary: '#009688',
+    card: '#009688',
+    border: '#fff',
+    notification: '#ff9800'
   },
 };

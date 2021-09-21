@@ -5,7 +5,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
-import { Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import Colors from './constants/Colors';
+import Theme from './constants/Themes';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -15,7 +17,7 @@ export default function App() {
     return null;
   } else {
     return (
-      <PaperProvider>
+      <PaperProvider theme={colorScheme === 'dark'? Theme.dark : Theme.light}>
         <SafeAreaProvider>
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
@@ -23,4 +25,5 @@ export default function App() {
       </PaperProvider>
     );
   }
-}
+};
+
