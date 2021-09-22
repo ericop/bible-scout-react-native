@@ -10,21 +10,18 @@ export default function LawAndProphetsScreen() {
   var count = 0
   var crossIt = () => {
     count += 1
-
-
     console.log('cross it',count)
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>LawAndProphetsScreen</Text>
+      <ReadingCard title='LawAndProphetsScreen' cardContent='Gen1-2' />
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" />
       <FAB style={styles.fab}
     icon="celtic-cross"
     onPress={() => crossIt()}
   />
-      <ReadingCard title='LawAndProphetsScreen' cardContent='Gen1-2' />
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" />
     </View>
   );
 }

@@ -4,13 +4,13 @@
     "slug": "bible-scout-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/bible-scout-checkbox-cross-negative.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/bible-scout-checkbox-cross-negative.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ff9800"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/bible-scout-checkbox-cross-negative.png",
+        "backgroundColor": "#ff9800"
       }
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/bible-scout-checkbox-cross-negative.png"
     }
   }
 }

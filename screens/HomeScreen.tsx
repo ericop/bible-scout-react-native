@@ -22,16 +22,16 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
       </Appbar> */}
       <Text style={styles.title}>Title of home screen</Text>
       <Text style={styles.container}>Eop</Text>
-      <Button icon="receipt" mode="contained" onPress={() => console.log('Pressed law')}>
+      <Button icon="receipt" mode="contained" onPress={() => navigation.navigate('LawAndProphets')}>
       Law And Prophets
     </Button>
-    <Button icon="teach" mode="contained" onPress={() => console.log('Wisdom')}>
+    <Button icon="teach" mode="contained" onPress={() => navigation.navigate('Wisdom')}>
     Wisdom
     </Button>
-    <Button icon="celtic-cross" mode="contained" onPress={() => console.log('Gospels')}>
+    <Button icon="celtic-cross" mode="contained" onPress={() => navigation.navigate('Gospels')}>
     Gospels
     </Button>
-    <Button icon="email-outline" mode="contained" onPress={() => console.log('Epistles')}>
+    <Button icon="email-outline" mode="contained" onPress={() => navigation.navigate('Epistles')}>
     Epistles
     </Button>
     <Button  onPress={() => navigation.navigate('Settings')}>
