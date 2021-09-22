@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { FAB } from 'react-native-paper';
+import ReadingCard from '../components/ReadingCard';
 
 export default function LawAndProphetsScreen() {
   var count = 0
@@ -21,6 +22,7 @@ export default function LawAndProphetsScreen() {
     icon="celtic-cross"
     onPress={() => crossIt()}
   />
+      <ReadingCard title='LawAndProphetsScreen' cardContent='Gen1-2' />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" />
     </View>

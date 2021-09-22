@@ -1,4 +1,4 @@
-import {DiscipleshipJournalReadingPlanData} from '../constants/discipleship-journal-plan.data.js'
+import * as DiscipleshipJournalReadingPlanData from '../constants/discipleship-journal-plan.data.js'
 
 export const BibleMediaService = () => {
     let djPlan = DiscipleshipJournalReadingPlanData
