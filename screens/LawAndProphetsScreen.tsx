@@ -13,11 +13,13 @@ export default function LawAndProphetsScreen() {
     console.log('cross it',count)
   }
 
+  var cardContextLaw = {bibleVersion:'ENGESVO1ET', bibleBook:'Gen', bibleChapterAndVerse:'1'};
+
   return (
     <View style={styles.container}>
-      <ReadingCard title='LawAndProphetsScreen' cardContent='Gen1-2' />
+      <ReadingCard title='LawAndProphetsScreen' cardContent={cardContextLaw} />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" />
+      {/* <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" /> */}
       <FAB style={styles.fab}
     icon="celtic-cross"
     onPress={() => crossIt()}
@@ -31,6 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#239554'
   },
   title: {
     fontSize: 20,

@@ -1,6 +1,6 @@
 import { DefaultTheme, DarkTheme, Provider as PaperProvider } from 'react-native-paper';
 const lightTeal = '#00A6b8';
-const primaryTeal = '#009688';
+const primaryTeal = '#1de9b6';
 const accentOrange = '#ff9800';
 const darkGrayBackground = '#37474f';
 const almostBlackText = 'rgba(0,0,0,0.87)';
