@@ -6,10 +6,33 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import { Appbar, Button } from 'react-native-paper';
 import { DrawerActions } from '@react-navigation/native';
+import { useState } from 'react';
 
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   const _handleSearch = () => console.log('Searching');
+
+const [testData, setTestData] = useState('');
+const callTestApi = () => fetch("https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy?urlText=https%3A%2F%2Fdbt.io%2Ftext%2Fverse%3Freply%3Djson%26v%3D2%26dam_id%3DENGESVO1ET%26book_id%3DPs%26chapter_id%3D1", {
+  "headers": {
+    "accept": "application/json, text/*",
+    "x-api-key": "Genesis1-2InTheBeginningGodCreated"
+  },
+  "referrer": "https://biblescout.app/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "omit"
+})
+//fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(json => {
+  console.log(json);
+  setTestData(json[0].verse_text)
+})
+
+
   return (
     
     <View style={styles.container}>
@@ -37,6 +60,10 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
     <Button  onPress={() => navigation.navigate('Settings')}>
     Go to Settings   
     </Button>
+    <Button  onPress={() => callTestApi()}>
+    call test API   
+    </Button>
+    <Text>{testData}</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/HomeScreen.tsx" />
     </View>
