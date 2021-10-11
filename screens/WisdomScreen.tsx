@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, ImageBackground, ScrollView } from 'react-native';
+import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -48,25 +48,41 @@ export default function WisdomScreen() {
     return (
       <View style={styles.container} >
         <ImageBackground source={require('./../assets/images/bible-open-to-john.jpg')} resizeMode="cover" style={styles.background}>
-          <Card style={styles.card}>
-            <ScrollView>
+          <ScrollView>
+
+            <Card style={styles.card}>
               <Card.Title title='Ps 3' subtitle='Month 1, Day 1' style={styles.title} />
               <Card.Content>
                 {/* <Paragraph> */}
                 {items.map((verse: { verse_id: string, chapter_id: string, verse_text: string }, idx: number) => {
-                    return (
-                      <View style={styles.verseContainer}>
-                        {verse.verse_id === '1' ? <Text style={styles.chapterNumber}>{verse.chapter_id}</Text> : null}
-                        <Text key={idx + 'num'} style={styles.verseNumber}>{verse.verse_id}</Text>
-                        <Text key={idx + 'words'} style={styles.verseText}>{verse.verse_text}</Text>
-                      </View>
-                    )
-                  }
+                  return (
+                    <View  key={idx +'verse-container'} style={styles.verseContainer}>
+                      {verse.verse_id === '1' ? <Text style={styles.chapterNumber}>{verse.chapter_id}</Text> : null}
+                      <Text key={idx + 'num' + verse.chapter_id + verse.verse_id} style={styles.verseNumber}>{verse.verse_id}</Text>
+                      <Text key={idx + 'words' + verse.chapter_id + verse.verse_id} style={styles.verseText}>{verse.verse_text}</Text>
+                    </View>
+                  )
+                }
                 )}
                 {/* </Paragraph> */}
               </Card.Content>
-            </ScrollView>
-          </Card>
+            </Card>
+          </ScrollView>
+          <View style={styles.bottomAppBar}>
+            <Text>🏠 ◀ ▶ ☑ ⏯</Text>
+          </View>
+          <FAB style={styles.fab}
+            icon="play"
+            onPress={() => console.log('fab wisdom')}
+          />
+          <View style={styles.bottomAppBarHole}>
+            <Image source={require('./../assets/images/bottom-app-bar-hole-orange-big5.png')} style={styles.bottomAppBarHoleImage} />
+          </View>
+          <View style={styles.bottomAppBar2}>
+            <Text></Text>
+          </View>
+          {/* <View style={styles.bottomAppBarHole}><Text>hole</Text> </View>
+          <View style={styles.bottomAppBar2}><Text>2</Text> </View>  */}
         </ImageBackground>
       </View>
     )
@@ -86,7 +102,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
-    margin: 10
+    margin: 10,
+    marginBottom: 60
   },
   title: {
     fontSize: 20,
@@ -117,6 +134,64 @@ const styles = StyleSheet.create({
     flexShrink: 1
   },
   bottomAppBar: {
-    backgroundColor: '#ff9800'
+    backgroundColor: '#ff9800',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 80,
+    height: 44,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 4,
+  },
+  bottomAppBar2: {
+    backgroundColor: '#ff9800',
+    position: 'absolute',
+    bottom: 0,
+    left: Dimensions.get('window').width - 10,
+    right: 0,
+    height: 44,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+    shadowColor: "#000",
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 4,
+  },
+  bottomAppBarHole: {
+    // backgroundColor: 'hotpink',
+    backgroundColor: 'transparent',
+
+    position: 'absolute',
+    bottom: 0,
+    left: Dimensions.get('window').width - 80,
+    borderRadius: -30,
+    height: 50,
+    width: 70,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+  },
+  bottomAppBarHoleImage: {
+    flex: 1,
+    width: 'auto',
+    resizeMode: 'cover'
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#8ef4da',
+    zIndex: 8, // iOS
+    elevation: 8, // android
   },
 });
