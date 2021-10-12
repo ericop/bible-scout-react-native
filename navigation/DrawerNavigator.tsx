@@ -35,7 +35,7 @@ export default function DrawerNavigator(propsIn: any) {
       <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'Law And Prophets',}} />
       <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom' }} />
       <MyDrawer.Screen name="Gospels" component={GospelsScreen} options={{ title: 'Gospels' }} />
-      <MyDrawer.Screen name="Epistle" component={EpistlesScreen} options={{ title: 'Epistle' }} />
+      <MyDrawer.Screen name="Epistles" component={EpistlesScreen} options={{ title: 'Epistles' }} />
       {/* with headerShown: false the app bar moves to the top */}
       <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
     </MyDrawer.Navigator>
@@ -80,10 +80,10 @@ export function DrawerContent(props: any) {
           onPress={() => navTo('Gospels')}
         />
         <Drawer.Item
-          label='Epistle'
+          label='Epistles'
           icon='email-outline'
-          active={active === 'Epistle'}
-          onPress={() => navTo('Epistle')}
+          active={active === 'Epistles'}
+          onPress={() => navTo('Epistles')}
         />
 
       </Drawer.Section>
