@@ -26,10 +26,22 @@ export default function EpistlesScreen() {
     }).then(resp => {
       setIsLoaded(true);
       console.log('axios resp:', resp.data)
-      setItems(resp.data)
+      const versesTemp = resp.data.map(x => {
+
+        const obj = {
+          book_name: x.book_name,
+          paragraph_number: x.paragraph_number, // turns out this is always '1' even when it shouldn't be
+          chapter_id : x.chapter_id,
+          verse_id : x.verse_id,
+          verse_text : x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+        }
+        console.log('my obj', obj)
+        return obj;
+      })
+      setItems(versesTemp)
     }).catch((err: any) => {
       setIsLoaded(true);
-      console.error('call failed with error:', err)
+      //console.error('call failed with error:', err)
       setError(err)
     })
   }, [])
@@ -48,14 +60,15 @@ export default function EpistlesScreen() {
               <Card.Title title='Acts 1' subtitle='Month 1, Day 1' style={styles.title} />
               <Card.Content>
                 {/* <Paragraph> */}
+                <Text>
                 {items.map((verse: { verse_id: string, chapter_id: string, verse_text: string }, idx: number) => {
                   return (
                     <Text key={idx +'verse-container'}>{verse.verse_id === '1' ? verse.chapter_id:null} {verse.verse_id} {verse.verse_text}
-
                     </Text>
                   )
                 }
                 )}
+                </Text>
                 {/* </Paragraph> */}
               </Card.Content>
             </Card>
@@ -89,7 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   card: {
-    backgroundColor: 'lightgray',
+    backgroundColor: '#37474f',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
@@ -99,7 +112,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#ff9800'
+    backgroundColor: 'lightgray',
   },
   chapterNumber: {
     fontSize: 24,

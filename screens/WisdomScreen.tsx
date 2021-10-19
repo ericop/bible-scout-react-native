@@ -32,7 +32,17 @@ export default function WisdomScreen() {
     }).then(resp => {
       setIsLoaded(true);
       console.log('axios resp:', resp.data)
-      setItems(resp.data)
+      const versesTemp = resp.data.map(x => {
+
+        const obj = {
+          book_name: x.book_name,
+          chapter_id : x.chapter_id,
+          verse_id : x.verse_id,
+          verse_text : x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+        }
+        return obj;
+      })
+      setItems(versesTemp)
     }).catch((err: any) => {
       setIsLoaded(true);
       console.error('call failed with error:', err)
@@ -48,25 +58,23 @@ export default function WisdomScreen() {
     return (
       <View style={styles.container} >
         <ImageBackground source={require('./../assets/images/bible-open-to-john.jpg')} resizeMode="cover" style={styles.background}>
-          <ScrollView>
-
-            <Card style={styles.card}>
+        <ScrollView>
+          <Card style={styles.card}>
               <Card.Title title='Ps 3' subtitle='Month 1, Day 1' style={styles.title} />
               <Card.Content>
-                {/* <Paragraph> */}
+                <Paragraph>
                 {items.map((verse: { verse_id: string, chapter_id: string, verse_text: string }, idx: number) => {
-                  return (
-                    <View  key={idx +'verse-container'} style={styles.verseContainer}>
-                      {verse.verse_id === '1' ? <Text style={styles.chapterNumber}>{verse.chapter_id}</Text> : null}
-                      <Text key={idx + 'num' + verse.chapter_id + verse.verse_id} style={styles.verseNumber}>{verse.verse_id}</Text>
-                      <Text key={idx + 'words' + verse.chapter_id + verse.verse_id} style={styles.verseText}>{verse.verse_text}</Text>
-                    </View>
-                  )
-                }
+                    return (<Text key={idx + 'verse-container'} style={styles.verseContainer}>
+                        {verse.verse_id === '1' ? <Text style={styles.chapterNumber}>{verse.chapter_id}</Text> : null}
+                        <Text key={idx + 'num'} style={styles.verseNumber}>{verse.verse_id}</Text>
+                        <Text key={idx + 'words'} style={styles.verseText}>{verse.verse_text}</Text>
+                      </Text>
+                    )
+                  }
                 )}
-                {/* </Paragraph> */}
+                </Paragraph>
               </Card.Content>
-            </Card>
+          </Card>
           </ScrollView>
           <View style={styles.bottomAppBar}>
             <Text>🏠 ◀ ▶ ☑ ⏯</Text>
@@ -79,10 +87,7 @@ export default function WisdomScreen() {
             <Image source={require('./../assets/images/bottom-app-bar-hole-orange-big5.png')} style={styles.bottomAppBarHoleImage} />
           </View>
           <View style={styles.bottomAppBar2}>
-            <Text></Text>
           </View>
-          {/* <View style={styles.bottomAppBarHole}><Text>hole</Text> </View>
-          <View style={styles.bottomAppBar2}><Text>2</Text> </View>  */}
         </ImageBackground>
       </View>
     )
@@ -98,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   card: {
-    backgroundColor: 'lightgray',
+    backgroundColor: '#37474f',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
@@ -114,23 +119,19 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: 'gray',
     fontWeight: 'bold',
-    // lineHeight: 28,
+    lineHeight: 28,
     marginRight: 10,
-    backgroundColor: 'pink'
   },
   verseContainer: {
     flexDirection: 'row',
-    // flexWrap:'wrap',
-    backgroundColor: 'hotpink'
+    flexWrap:'wrap',
   },
   verseNumber: {
     fontSize: 12,
-    lineHeight: 18,
-    backgroundColor: 'gold'
+    lineHeight: 22,
   },
   verseText: {
     fontSize: 18,
-    backgroundColor: 'tan',
     flexShrink: 1
   },
   bottomAppBar: {
