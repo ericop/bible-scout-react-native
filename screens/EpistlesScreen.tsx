@@ -3,14 +3,15 @@ import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'reac
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { Card, FAB } from 'react-native-paper';
+import { Button, Card, FAB } from 'react-native-paper';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import navigation from '../navigation';
 
 export default function EpistlesScreen() {
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [items, setItems] = useState<{ verse_id: string, chapter_id: string, verse_text: string }[]>([]);
+  const [items, setItems] = useState<{ book: string, verse: string, chapter: string, text: string }[]>([]);
 
   // Note: the empty deps array [] means ...3DENGESVN1ET
   // this useEffect will run once
@@ -26,16 +27,15 @@ export default function EpistlesScreen() {
     }).then(resp => {
       setIsLoaded(true);
       console.log('axios resp:', resp.data)
-      const versesTemp = resp.data.map(x => {
+      const versesTemp = resp.data.map((x:{book_name: string, chapter_id: string, verse_id: string, verse_text: string}) => {
 
         const obj = {
-          book_name: x.book_name,
-          paragraph_number: x.paragraph_number, // turns out this is always '1' even when it shouldn't be
-          chapter_id : x.chapter_id,
-          verse_id : x.verse_id,
-          verse_text : x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+          book: x.book_name,
+          chapter: x.chapter_id,
+          verse: x.verse_id,
+          text: x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
         }
-        console.log('my obj', obj)
+        //console.log('my obj', obj)
         return obj;
       })
       setItems(versesTemp)
@@ -57,16 +57,18 @@ export default function EpistlesScreen() {
           <ScrollView>
 
             <Card style={styles.card}>
-              <Card.Title title='Acts 1' subtitle='Month 1, Day 1' style={styles.title} />
+              <Card.Title title='{items[0].book}' subtitle='Month 1, Day 1' style={styles.title} />
               <Card.Content>
                 {/* <Paragraph> */}
                 <Text>
-                {items.map((verse: { verse_id: string, chapter_id: string, verse_text: string }, idx: number) => {
-                  return (
-                    <Text key={idx +'verse-container'}>{verse.verse_id === '1' ? verse.chapter_id:null} {verse.verse_id} {verse.verse_text}
-                    </Text>
-                  )
-                }
+                {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
+                    return (
+                      <Text key={idx + 'verse-container'} style={styles.verseContainer}>
+                        {v.verse === '1' ? <Text style={styles.chapterNumber}>{v.chapter}</Text> : null}
+                        <Text key={idx + 'num'} style={styles.verseNumber}>{v.verse}</Text>
+                        <Text key={idx + 'words'} style={styles.verseText}>{v.text}</Text>
+                      </Text>
+                    )}
                 )}
                 </Text>
                 {/* </Paragraph> */}
@@ -74,6 +76,9 @@ export default function EpistlesScreen() {
             </Card>
           </ScrollView>
           <View style={styles.bottomAppBar}>
+          <Button icon="home" mode="contained" onPress={() => navigation.navigate('Home')}>
+            H
+          </Button>
             <Text>🏠 ◀ ▶ ☑ ⏯</Text>
           </View>
           <FAB style={styles.fab}
