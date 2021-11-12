@@ -35,7 +35,7 @@ export default function EpistlesScreen() {
           verse: x.verse_id,
           text: x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
         }
-        //console.log('my obj', obj)
+        console.log('my obj', obj)
         return obj;
       })
       setItems(versesTemp)
@@ -57,7 +57,7 @@ export default function EpistlesScreen() {
           <ScrollView>
 
             <Card style={styles.card}>
-              <Card.Title title='{items[0].book}' subtitle='Month 1, Day 1' style={styles.title} />
+              <Card.Title title={items[0] ? items[0].book: ''} subtitle='Month 1, Day 1' style={styles.title} />
               <Card.Content>
                 {/* <Paragraph> */}
                 <Text>
@@ -76,10 +76,21 @@ export default function EpistlesScreen() {
             </Card>
           </ScrollView>
           <View style={styles.bottomAppBar}>
-          <Button icon="home" mode="contained" onPress={() => navigation.navigate('Home')}>
-            H
-          </Button>
-            <Text>🏠 ◀ ▶ ☑ ⏯</Text>
+            <Button icon="home" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </Button>
+            <Button icon="page-previous" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </Button>
+            <Button icon="page-next" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </Button>
+            <Button icon="playlist-check" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+              mode="text" onPress={() => navigation.navigate('Home')}>
+            </Button>
+            <Button icon="page-last" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </Button>
           </View>
           <FAB style={styles.fab}
             icon="play"
@@ -145,6 +156,11 @@ const styles = StyleSheet.create({
   bottomAppBar: {
     backgroundColor: '#ff9800',
     position: 'absolute',
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     bottom: 0,
     left: 0,
     right: 80,
@@ -158,6 +174,18 @@ const styles = StyleSheet.create({
     // },
     // shadowOpacity: 0.25,
     // shadowRadius: 4,
+  },
+  bottomAppBarButton: {
+    backgroundColor: '#ff9800',
+    margin:0,
+    padding:0,
+    // fontSize:12
+  },
+  bottomAppBarButtonContent: {
+    fontSize: 28,
+    color: 'rgba(0,0,0,0.87)',
+    margin:0,
+    padding:0
   },
   bottomAppBar2: {
     backgroundColor: '#ff9800',
