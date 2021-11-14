@@ -58,7 +58,7 @@ export default function EpistlesScreen({ navigation }:RootTabScreenProps<'Epistl
           <ScrollView>
 
             <Card style={styles.card}>
-              <Card.Title title={items[0] ? items[0].book: ''} subtitle='Month 1, Day 1' style={styles.titleContainer}
+              <Card.Title title={items[0] ? `${items[0].book} ${items[0].chapter}:${items[0].verse} - ${items[items.length-1].book} ${items[items.length-1].chapter}:${items[items.length-1].verse}`: ''} subtitle='Month Y, Day Z' style={styles.titleContainer}
               titleStyle={styles.title} 
               subtitleStyle={styles.subtitle}
                />
@@ -147,21 +147,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: 'gray',
     fontWeight: 'bold',
-    // lineHeight: 28,
+    lineHeight: 28,
     marginRight: 10,
    // backgroundColor: 'pink'
   },
   verseContainer: {
     flexDirection: 'row',
+    color: 'white'
   },
   verseNumber: {
     fontSize: 12,
     lineHeight: 18,
+    color: 'white',
     textAlignVertical: 'top' // android, but seems to only work for web
   },
   verseText: {
     fontSize: 18,
     flexShrink: 1,
+    color: 'white',
   },
   bottomAppBar: {
     backgroundColor: '#ff9800',
