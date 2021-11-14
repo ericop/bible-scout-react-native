@@ -1,98 +1,226 @@
-import * as WebBrowser from 'expo-web-browser';
-import React, { useState, useEffect } from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-import { BibleMediaService } from '../assets/services/bible-media.service';
+import * as React from 'react';
+import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'react-native';
 
-import Colors from '../constants/Colors';
-import Themes from '../constants/Themes';
-import { MonoText } from './StyledText';
-import { Text, View } from './Themed';
+import EditScreenInfo from '../components/EditScreenInfo';
+import { Text, View } from '../components/Themed';
+import { IconButton, Card, FAB } from 'react-native-paper';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { RootTabScreenProps } from '../types';
+//import navigation from '../navigation';
+import {useRoute} from '@react-navigation/native';
 
-
-
-const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />
-
-export default function ReadingCard({ title, cardContent }: { title: string, cardContent: {bibleVersion:string, bibleBook:string, bibleChapterAndVerse:string} }) {
-  let bibleService = BibleMediaService()
-  let isLoading = false
-  let bibleBook
-  //let text: {verseNum:number,chapter:number,text:string}[] = []
-  const [text, setText] = useState([]);
-
-  let fetchText = (bibleVerse: string, book: string, verseString: string) => {
-    isLoading = true
-
-    bibleService.getText(bibleVerse, book, verseString)
-      // .then((response: any) => {
-      //   console.log('bible service response', response);
-      //  return  response.json()
-      // })
-      .then((resp: any) => {
-        console.log('data=>', resp.data)
-        const results: { chapter_id: string, verse_id: string, verse_text: string, paragraph_number: string }[] = resp.data
-        console.log('results=>', results)
-        setText(resp.data.flat().map((item: any) => {
-          return { chapter: item.chapter_id, verseNum: item.verse_id, text: item.verse_text, paragraphNum: item.paragraph_number }
-        }))
-        isLoading = false
-      })
-  }
-
-
-  // onInit
+export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'>) {
+  const [error, setError] = useState<any>(null);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [items, setItems] = useState<{ book: string, verse: string, chapter: string, text: string }[]>([]);
+  const route = useRoute();
+  // Note: the empty deps array [] means ...3DENGESVN1ET
+  // this useEffect will run once
+  // similar to componentDidMount()
   useEffect(() => {
-    // fetchText('ENGESVO1ET', 'Gen', '1')
-    console.log('cardContent', cardContent);
-    fetchText(cardContent.bibleVersion, cardContent.bibleBook, cardContent.bibleChapterAndVerse)
-  }, [cardContent])
+    axios({
+      url: 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy',
+      params: {
+        urlText: 'https://dbt.io/text/verse?reply=json&v=2&dam_id=ENGESVN1ET&book_id=Acts&chapter_id=1&verse_start=12&verse_end=26'
+      },
+      method: 'GET',
+      headers: { 'x-api-key': 'Genesis1-2InTheBeginningGodCreated' }
+    }).then(resp => {
+      setIsLoaded(true);
+      console.log('axios resp:', resp.data)
+      const versesTemp = resp.data.map((x:{book_name: string, chapter_id: string, verse_id: string, verse_text: string}) => {
 
-  return (
-    <Card style={styles.card}>
-      <ScrollView>
-      <Card.Title title={title} subtitle="Card Subtitle" left={LeftContent} />
-      <Card.Cover source={require('./../assets/images/bible-open-to-john.jpg')} />
-      <Card.Content>
-          <Title>{cardContent.bibleBook} {cardContent.bibleChapterAndVerse}</Title>
-          {text.map((verse: { verseNum: number, chapter: number, text: string }, idx: number) =>
-            <Text key={idx}>{verse.verseNum} {verse.text}</Text>
-          )}
-      </Card.Content>
-      <Card.Actions>
-        <Button>Cancel</Button>
-        <Button>Ok</Button>
-      </Card.Actions>
-      </ScrollView>
-    </Card>
-  );
+        const obj = {
+          book: x.book_name,
+          chapter: x.chapter_id,
+          verse: x.verse_id,
+          text: x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+        }
+        console.log('my obj', obj)
+        return obj;
+      })
+      setItems(versesTemp)
+    }).catch((err: any) => {
+      setIsLoaded(true);
+      //console.error('call failed with error:', err)
+      setError(err)
+    })
+  }, [])
+
+  if (error !== null) {
+    return <Text>Error: {error.message}</Text>;
+  } else if (!isLoaded) {
+    return <Text>Loading...</Text>;
+  } else {
+    return (
+      <View style={styles.container} >
+        <ImageBackground source={require('./../assets/images/bible-open-to-john.jpg')} resizeMode="cover" style={styles.background}>
+          <ScrollView>
+
+            <Card style={styles.card}>
+              <Card.Title title={items[0] ? `${items[0].book} ${items[0].chapter}:${items[0].verse} - ${items[items.length-1].book} ${items[items.length-1].chapter}:${items[items.length-1].verse}`: ''} subtitle={`${route.name}: Month Y, Day Z`} style={styles.titleContainer}
+              titleStyle={styles.title} 
+              subtitleStyle={styles.subtitle}
+               />
+              <Card.Content style={styles.cardContent}>
+                {/* <Paragraph> */}
+                <Text>
+                {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
+                    return (
+                      <Text key={idx + 'verse-container'} style={styles.verseContainer}>
+                        {v.verse === '1' ? <Text style={styles.chapterNumber}>{v.chapter}</Text> : null}
+                        <Text key={idx + 'num'} style={styles.verseNumber}>{v.verse}</Text>
+                        <Text key={idx + 'words'} style={styles.verseText}>{v.text}</Text>
+                      </Text>
+                    )}
+                )}
+                </Text>
+                {/* </Paragraph> */}
+              </Card.Content>
+            </Card>
+          </ScrollView>
+          <View style={styles.bottomAppBar}>
+            <IconButton icon="home" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </IconButton>
+            <IconButton icon="page-previous" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </IconButton>
+            <IconButton icon="page-next" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </IconButton>
+            <IconButton icon="playlist-check" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+              mode="text" onPress={() => navigation.navigate('Home')}>
+            </IconButton>
+            <IconButton icon="note-text" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+            mode="text" onPress={() => navigation.navigate('Home')}>
+            </IconButton>
+          </View>
+          <FAB style={styles.fab}
+            icon="play"
+            onPress={() => console.log('fab wisdom')}
+          />
+          <View style={styles.bottomAppBarHole}>
+            <Image source={require('./../assets/images/bottom-app-bar-hole-orange-big5.png')} style={styles.bottomAppBarHoleImage} />
+          </View>
+          <View style={styles.bottomAppBar2}>
+          </View>
+          {/* <View style={styles.bottomAppBarHole}><Text>hole</Text> </View>
+          <View style={styles.bottomAppBar2}><Text>2</Text> </View>  */}
+        </ImageBackground>
+      </View>
+    )
+  }
 }
 
-// docs https://reactnative.dev/docs/view-style-props
 const styles = StyleSheet.create({
-  card: {
-    alignItems: 'center',
-    height: '90%',
-    width: '90%',
+  container: {
+    flex: 1
   },
-  cardTitle: {
-    marginVertical: 7,
+  background: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  card: {
+    backgroundColor: '#37474f',
+    alignItems: 'center',
+    justifyContent: 'center',
+    //padding: 10,
+    margin: 10,
+    marginBottom: 60
+  },
+  titleContainer: {
+    backgroundColor: '#1de9b6',
+  },
+  title: {
+    fontSize: 20,
+    color: 'rgba(0,0,0,0.87)',
+  },
+  subtitle: {
+    fontSize: 12,
+    color: 'rgba(0,0,0,0.57)',
   },
   cardContent: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  // docs https://reactnative.dev/docs/text-style-props
-  cardContentParagraph: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  cardCover: {
-    width: '100%'
-  },
-  cardActions: {
     marginTop: 15,
-    marginHorizontal: 20,
+  },
+  chapterNumber: {
+    fontSize: 24,
+    color: 'gray',
+    fontWeight: 'bold',
+    lineHeight: 28,
+    marginRight: 10,
+   // backgroundColor: 'pink'
+  },
+  verseContainer: {
+    flexDirection: 'row',
+    color: 'white'
+  },
+  verseNumber: {
+    fontSize: 12,
+    lineHeight: 18,
+    color: 'white',
+    textAlignVertical: 'top' // android, but seems to only work for web
+  },
+  verseText: {
+    fontSize: 18,
+    flexShrink: 1,
+    color: 'white',
+  },
+  bottomAppBar: {
+    backgroundColor: '#ff9800',
+    position: 'absolute',
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
     alignItems: 'center',
-  }
-});
+    bottom: 0,
+    left: 0,
+    right: 80,
+    height: 44,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+  },
+  bottomAppBarButton: {
+    backgroundColor:  '#ff9800',
+  },
+  bottomAppBar2: {
+    backgroundColor: '#ff9800',
+    position: 'absolute',
+    bottom: 0,
+    left: Dimensions.get('window').width - 10,
+    right: 0,
+    height: 44,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+    shadowColor: "#000",
+  },
+  bottomAppBarHole: {
+    // backgroundColor: 'hotpink',
+    backgroundColor: 'transparent',
 
+    position: 'absolute',
+    bottom: 0,
+    left: Dimensions.get('window').width - 80,
+    borderRadius: -30,
+    height: 50,
+    width: 70,
+    zIndex: 5, // iOS
+    elevation: 5, // android
+  },
+  bottomAppBarHoleImage: {
+    flex: 1,
+    width: 'auto',
+    resizeMode: 'cover'
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#8ef4da',
+    zIndex: 8, // iOS
+    elevation: 8, // android
+  },
+});

@@ -8,12 +8,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { RootTabScreenProps } from '../types';
 //import navigation from '../navigation';
+import {useRoute} from '@react-navigation/native';
 
 export default function EpistlesScreen({ navigation }:RootTabScreenProps<'Epistles'>) {
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<{ book: string, verse: string, chapter: string, text: string }[]>([]);
-
+  const route = useRoute();
   // Note: the empty deps array [] means ...3DENGESVN1ET
   // this useEffect will run once
   // similar to componentDidMount()
@@ -58,7 +59,7 @@ export default function EpistlesScreen({ navigation }:RootTabScreenProps<'Epistl
           <ScrollView>
 
             <Card style={styles.card}>
-              <Card.Title title={items[0] ? `${items[0].book} ${items[0].chapter}:${items[0].verse} - ${items[items.length-1].book} ${items[items.length-1].chapter}:${items[items.length-1].verse}`: ''} subtitle='Month Y, Day Z' style={styles.titleContainer}
+              <Card.Title title={items[0] ? `${items[0].book} ${items[0].chapter}:${items[0].verse} - ${items[items.length-1].book} ${items[items.length-1].chapter}:${items[items.length-1].verse}`: ''} subtitle={`${route.name}: Month Y, Day Z`} style={styles.titleContainer}
               titleStyle={styles.title} 
               subtitleStyle={styles.subtitle}
                />
