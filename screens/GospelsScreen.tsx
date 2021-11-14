@@ -21,7 +21,7 @@ export default function GospelsScreen() {
 
       <ReadingCard title='Gospels' cardContent={cardContextGospels} />
       <FAB style={styles.fab}
-    icon="celtic-cross"
+    icon="christianity-outline"
     onPress={() => crossIt()}
   />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />

@@ -45,13 +45,13 @@ const  callTestApi = async () => {
       </Appbar> */}
       <Text style={styles.title}>Title of home screen</Text>
       <Text style={styles.container}>Eop</Text>
-      <Button icon="receipt" mode="contained" onPress={() => navigation.navigate('LawAndProphets')}>
+      <Button icon="script-text-outline" mode="contained" onPress={() => navigation.navigate('LawAndProphets')}>
       Law And Prophets
     </Button>
-    <Button icon="teach" mode="contained" onPress={() => navigation.navigate('Wisdom')}>
+    <Button icon="scale-balance" mode="contained" onPress={() => navigation.navigate('Wisdom')}>
     Wisdom
     </Button>
-    <Button icon="celtic-cross" mode="contained" onPress={() => navigation.navigate('Gospels')}>
+    <Button icon="christianity-outline" mode="contained" onPress={() => navigation.navigate('Gospels')}>
     Gospels
     </Button>
     <Button icon="email-outline" mode="contained" onPress={() => navigation.navigate('Epistles')}>

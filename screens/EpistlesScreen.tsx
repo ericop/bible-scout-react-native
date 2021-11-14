@@ -92,7 +92,7 @@ export default function EpistlesScreen({ navigation }:RootTabScreenProps<'Epistl
             <IconButton icon="playlist-check" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
               mode="text" onPress={() => navigation.navigate('Home')}>
             </IconButton>
-            <IconButton icon="page-last" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
+            <IconButton icon="note-text" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
             mode="text" onPress={() => navigation.navigate('Home')}>
             </IconButton>
           </View>

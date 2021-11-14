@@ -28,7 +28,7 @@ export default function SettingsScreen({ navigation }: RootTabScreenProps<'Setti
       </Appbar> */}
       <Text style={styles.title}>Pick your settings bro</Text>
       <FAB style={styles.fab}
-    icon="celtic-cross"
+    icon="cards"
     onPress={() => crossIt()}
   />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />

@@ -63,19 +63,19 @@ export function DrawerContent(props: any) {
         />
         <Drawer.Item
           label='LawAndProphets'
-          icon='receipt'
+          icon='script-text-outline'
           active={active === 'LawAndProphets'}
           onPress={() => navTo('LawAndProphets')}
         />
         <Drawer.Item
           label='Wisdom'
-          icon='teach'
+          icon='scale-balance'
           active={active === 'Wisdom'}
           onPress={() => navTo('Wisdom')}
         />
         <Drawer.Item
           label='Gospels'
-          icon='celtic-cross'
+          icon='christianity-outline'
           active={active === 'Gospels'}
           onPress={() => navTo('Gospels')}
         />
