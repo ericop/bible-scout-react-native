@@ -3,12 +3,13 @@ import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'reac
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { Button, Card, FAB } from 'react-native-paper';
+import { IconButton, Card, FAB } from 'react-native-paper';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import navigation from '../navigation';
+import { RootTabScreenProps } from '../types';
+//import navigation from '../navigation';
 
-export default function EpistlesScreen() {
+export default function EpistlesScreen({ navigation }:RootTabScreenProps<'Epistles'>) {
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<{ book: string, verse: string, chapter: string, text: string }[]>([]);
@@ -57,8 +58,11 @@ export default function EpistlesScreen() {
           <ScrollView>
 
             <Card style={styles.card}>
-              <Card.Title title={items[0] ? items[0].book: ''} subtitle='Month 1, Day 1' style={styles.title} />
-              <Card.Content>
+              <Card.Title title={items[0] ? items[0].book: ''} subtitle='Month 1, Day 1' style={styles.titleContainer}
+              titleStyle={styles.title} 
+              subtitleStyle={styles.subtitle}
+               />
+              <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
                 <Text>
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
@@ -76,21 +80,21 @@ export default function EpistlesScreen() {
             </Card>
           </ScrollView>
           <View style={styles.bottomAppBar}>
-            <Button icon="home" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            <IconButton icon="home" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
             mode="text" onPress={() => navigation.navigate('Home')}>
-            </Button>
-            <Button icon="page-previous" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            </IconButton>
+            <IconButton icon="page-previous" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
             mode="text" onPress={() => navigation.navigate('Home')}>
-            </Button>
-            <Button icon="page-next" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            </IconButton>
+            <IconButton icon="page-next" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
             mode="text" onPress={() => navigation.navigate('Home')}>
-            </Button>
-            <Button icon="playlist-check" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            </IconButton>
+            <IconButton icon="playlist-check" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
               mode="text" onPress={() => navigation.navigate('Home')}>
-            </Button>
-            <Button icon="page-last" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent}
+            </IconButton>
+            <IconButton icon="page-last" style={styles.bottomAppBarButton} labelStyle={styles.bottomAppBarButtonContent} color='rgba(0,0,0,0.87)'
             mode="text" onPress={() => navigation.navigate('Home')}>
-            </Button>
+            </IconButton>
           </View>
           <FAB style={styles.fab}
             icon="play"
@@ -121,14 +125,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#37474f',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
+    //padding: 10,
     margin: 10,
     marginBottom: 60
   },
+  titleContainer: {
+    backgroundColor: '#1de9b6',
+  },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
-    backgroundColor: 'lightgray',
+    color: 'rgba(0,0,0,0.87)',
+  },
+  subtitle: {
+    fontSize: 12,
+    color: 'rgba(0,0,0,0.57)',
+  },
+  cardContent: {
+    marginTop: 15,
   },
   chapterNumber: {
     fontSize: 24,
@@ -136,22 +149,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     // lineHeight: 28,
     marginRight: 10,
-    backgroundColor: 'pink'
+   // backgroundColor: 'pink'
   },
   verseContainer: {
     flexDirection: 'row',
-    // flexWrap:'wrap',
-    backgroundColor: 'hotpink'
   },
   verseNumber: {
     fontSize: 12,
     lineHeight: 18,
-    backgroundColor: 'gold'
+    textAlignVertical: 'top' // android, but seems to only work for web
   },
   verseText: {
     fontSize: 18,
-    backgroundColor: 'tan',
-    flexShrink: 1
+    flexShrink: 1,
   },
   bottomAppBar: {
     backgroundColor: '#ff9800',
@@ -167,25 +177,9 @@ const styles = StyleSheet.create({
     height: 44,
     zIndex: 5, // iOS
     elevation: 5, // android
-    // shadowColor: "#000",
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 4,
   },
   bottomAppBarButton: {
-    backgroundColor: '#ff9800',
-    margin:0,
-    padding:0,
-    // fontSize:12
-  },
-  bottomAppBarButtonContent: {
-    fontSize: 28,
-    color: 'rgba(0,0,0,0.87)',
-    margin:0,
-    padding:0
+    backgroundColor:  '#ff9800',
   },
   bottomAppBar2: {
     backgroundColor: '#ff9800',
@@ -197,12 +191,6 @@ const styles = StyleSheet.create({
     zIndex: 5, // iOS
     elevation: 5, // android
     shadowColor: "#000",
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 4,
   },
   bottomAppBarHole: {
     // backgroundColor: 'hotpink',
