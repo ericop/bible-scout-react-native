@@ -1,33 +1,21 @@
 
 import { useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import useStoredState from './useAsyncStorage'
 
 export default function useReadingProgress() {
+    enum ReadingCategory {
+        lawAndProphets = 'law-and-prophets',
+        wisdom = 'wisdom',
+        gospels = 'gospels',
+        epistles = 'epistles'
+    }
     type ReadingState = {
         "law-and-prophets": { month: number, day: number },
         wisdom: { month: number, day: number },
         gospels: { month: number, day: number },
         epistles: { month: number, day: number }
     }
-
-
-    const getObjAsync = async (key: string) => {
-        try {
-          const jsonValue = await AsyncStorage.getItem(key)
-          return jsonValue != null ? JSON.parse(jsonValue) : null
-        } catch(e) {
-          console.error('getObjAsync', e)
-        }
-      }
-
-      const storeObjAsync = async (key: string, value: {}) => {
-        try {
-          const jsonValue = JSON.stringify(value)
-          await AsyncStorage.setItem(key, jsonValue)
-        } catch (e) {
-            console.error('storeObjAsync', e)
-        }
-      }
 
     const defaultReadingState: ReadingState = {
         "law-and-prophets": { month: 1, day: 1 },
@@ -36,29 +24,26 @@ export default function useReadingProgress() {
         epistles: { month: 1, day: 1 }
     }
 
-    let initialReadingState = await getObjAsync('readingProgress') || defaultReadingState
+    const [readingProgress, setReadingProgress, synced] = useStoredState("readingProgress", defaultReadingState)
 
-    const [readingProgress, setReadingProgress] = useState<ReadingState>(initialReadingState)
-
-    const getReadingProgress = (readingCategory: string) => {
+    const getReadingProgress = (readingCategory: ReadingCategory) => {
         // TODO look into https://github.com/react-native-async-storage/async-storage/issues/32#issuecomment-798922343
         // or https://github.com/sampennington/use-async-storage/blob/master/src/index.ts
         // this is to tie the useHook to the AsyncStorage
         console.log('getReadingProgress', readingProgress)
         return readingProgress[readingCategory] // TODO limit to enum
     }
-    const updateReadingProgress = (readingCategory: string, month: number, day: number) => {
-        let progress = getReadingProgress(readingCategory)
-        let updatedProgress = { ...progress,
+    const updateReadingProgress = (readingCategory: ReadingCategory, month: number, day: number) => {
+        let progress = readingProgress // all categories
+        let updatedProgress = { ...progress as unknown as ReadingState,
             readingCategory : {month: month, day: day}
         }
         console.log('setReadingProgress', updatedProgress)
-        storeObjAsync('readingProgress', updatedProgress)
         setReadingProgress(updatedProgress)
         return updatedProgress
     }
 
-    const incrementReadingByCategory = (readingCategory: string) => {
+    const incrementReadingByCategory = (readingCategory: ReadingCategory) => {
         let progress = getReadingProgress(readingCategory)
 
         let {month: readingMonth, day: readingDay } = progress
@@ -75,12 +60,12 @@ export default function useReadingProgress() {
         } else {
             readingDay++
         }
-        //TODO re-save the reading month and day
+        updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
-    const decrementReadingByCategory = (readingCategory: string) => {
+    const decrementReadingByCategory = (readingCategory: ReadingCategory) => {
         let progress = getReadingProgress(readingCategory)
 
-        let {month: readingMonth, day: readingDay } = progress
+        let { month: readingMonth, day: readingDay } = progress
 
         let shouldGoBackAMonth = readingDay === 1 && readingMonth > 1
 
@@ -90,26 +75,20 @@ export default function useReadingProgress() {
         } else {
             readingDay--
         }
-        //TODO re-save the reading month and day
+        updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
-    const incrementToNextReadingCategory =  (readingCategory: string) => {
-        //let readingCategory = m.route.get().split('/')[1]
-        //incrementLocalStoreOnly()
-    
+    const nextReadingCategory =  (readingCategory: string) : string =>  {
             switch (readingCategory) {
-                case 'law-and-prophets':
-                    //m.route.set('/wisdom')
-                    break
-                case 'wisdom':
-                // m.route.set('/gospels')
-                    break
-                case 'gospels':
-                    //m.route.set('/epistles')
-                    break
-                case 'epistles':
-                    //m.route.set('/home')
-                    break
+                case 'LawAndProphets':
+                    return 'Wisdom'
+                case 'Wisdom':
+                    return 'Gospels'
+                case 'Gospels':
+                    return 'Epistles'
+                case 'Epistles':
+                    return 'Home'
             }
+            return 'Home'
         }
 
     return {
@@ -117,6 +96,6 @@ export default function useReadingProgress() {
         updateReadingProgress,
         incrementReadingByCategory,
         decrementReadingByCategory,
-        incrementToNextReadingCategory
+        nextReadingCategory
     }
 }
