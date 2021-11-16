@@ -9,9 +9,10 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Colors from './constants/Colors';
 import Theme from './constants/Themes';
 import globalState from './hooks/globalState';
+import useReadingProgress from './hooks/useReadingProgress';
 
 export default function App() {
-  globalState.readingProgress = 
+  globalState.readingProgress = useReadingProgress;
 
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();

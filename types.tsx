@@ -33,6 +33,7 @@ export type RootTabParamList = {
   Settings: undefined;
 };
 
+// should enable normal routes and modal
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
