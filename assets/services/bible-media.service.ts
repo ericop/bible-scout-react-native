@@ -16,9 +16,9 @@ export const BibleMediaService = () => {
 
     var oninit = () => {
         // TODO change to use https://reactnavigation.org/docs/use-navigation-state
-        readingCategory = 'law-and-prophets' //m.route.get().split('/')[1]
+        readingCategory = 'lawAndProphets' //m.route.get().split('/')[1]
         switch (readingCategory) {
-            case 'law-and-prophets':
+            case 'lawAndProphets':
             case 'wisdom':
                 audioBibleVersion = 'ENGESVO1DA'
                 textBibleVersion = 'ENGESVO1ET'

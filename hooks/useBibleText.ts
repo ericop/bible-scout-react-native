@@ -60,7 +60,7 @@ let incrementReadingCategory = (currentReadingCategory: string) => {
     //TODO incrementLocalStoreOnly()
 
     // switch (readingCategory) {
-    //     case 'law-and-prophets':
+    //     case 'lawAndProphets':
     //         navigation.navigate('Wisdom')
     //         break
     //     case 'wisdom':

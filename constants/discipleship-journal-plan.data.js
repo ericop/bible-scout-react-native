@@ -21,7 +21,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 1-2"
                 },
                 {
@@ -41,7 +41,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 3-4"
                 },
                 {
@@ -61,7 +61,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 5-8"
                 },
                 {
@@ -81,7 +81,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 9-11"
                 },
                 {
@@ -101,7 +101,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 12-14"
                 },
                 {
@@ -121,7 +121,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 15-17"
                 },
                 {
@@ -141,7 +141,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 18-20"
                 },
                 {
@@ -161,7 +161,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 21-23"
                 },
                 {
@@ -181,7 +181,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 24"
                 },
                 {
@@ -201,7 +201,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 25-26"
                 },
                 {
@@ -221,7 +221,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 27-28"
                 },
                 {
@@ -241,7 +241,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 29-30"
                 },
                 {
@@ -261,7 +261,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 31"
                 },
                 {
@@ -281,7 +281,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 32-33"
                 },
                 {
@@ -301,7 +301,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 34-35"
                 },
                 {
@@ -321,7 +321,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 36"
                 },
                 {
@@ -341,7 +341,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 37-38"
                 },
                 {
@@ -361,7 +361,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 39-40"
                 },
                 {
@@ -381,7 +381,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 41"
                 },
                 {
@@ -401,7 +401,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 42-43"
                 },
                 {
@@ -421,7 +421,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 44-45"
                 },
                 {
@@ -441,7 +441,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 46-47"
                 },
                 {
@@ -461,7 +461,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 48"
                 },
                 {
@@ -481,7 +481,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 49"
                 },
                 {
@@ -501,7 +501,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Gen 50"
                 }
             ]
@@ -527,7 +527,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 1-3"
                 },
                 {
@@ -547,7 +547,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 4-6"
                 },
                 {
@@ -567,7 +567,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 7-9"
                 },
                 {
@@ -587,7 +587,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 10-12"
                 },
                 {
@@ -607,7 +607,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 13-15"
                 },
                 {
@@ -627,7 +627,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 16-18"
                 },
                 {
@@ -647,7 +647,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 19-20"
                 },
                 {
@@ -667,7 +667,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 21-23"
                 },
                 {
@@ -687,7 +687,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 24-26"
                 },
                 {
@@ -707,7 +707,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 27-29"
                 },
                 {
@@ -727,7 +727,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 30-31"
                 },
                 {
@@ -747,7 +747,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 32-33"
                 },
                 {
@@ -767,7 +767,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 34"
                 },
                 {
@@ -787,7 +787,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 35-37"
                 },
                 {
@@ -807,7 +807,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Exod 38-40"
                 },
                 {
@@ -827,7 +827,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 1-4"
                 },
                 {
@@ -847,7 +847,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 5-7"
                 },
                 {
@@ -867,7 +867,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 8-10"
                 },
                 {
@@ -887,7 +887,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 11-13"
                 },
                 {
@@ -907,7 +907,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 14-15"
                 },
                 {
@@ -927,7 +927,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 16-17"
                 },
                 {
@@ -947,7 +947,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 18-20"
                 },
                 {
@@ -967,7 +967,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 21-23"
                 },
                 {
@@ -987,7 +987,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 24-25"
                 },
                 {
@@ -1007,7 +1007,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Lev 26-27"
                 }
             ]
@@ -1033,7 +1033,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 1-2"
                 },
                 {
@@ -1053,7 +1053,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 3-4"
                 },
                 {
@@ -1073,7 +1073,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 5-6"
                 },
                 {
@@ -1093,7 +1093,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 7-8"
                 },
                 {
@@ -1113,7 +1113,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 9-11"
                 },
                 {
@@ -1133,7 +1133,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 12-14"
                 },
                 {
@@ -1153,7 +1153,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 15-17"
                 },
                 {
@@ -1173,7 +1173,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 18-20"
                 },
                 {
@@ -1193,7 +1193,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 21-22"
                 },
                 {
@@ -1213,7 +1213,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 23-25"
                 },
                 {
@@ -1233,7 +1233,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 26-27"
                 },
                 {
@@ -1253,7 +1253,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 28-30"
                 },
                 {
@@ -1273,7 +1273,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 31-32"
                 },
                 {
@@ -1293,7 +1293,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Num 33-36"
                 },
                 {
@@ -1313,7 +1313,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 1-3"
                 },
                 {
@@ -1333,7 +1333,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 4-5"
                 },
                 {
@@ -1353,7 +1353,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 6-8"
                 },
                 {
@@ -1373,7 +1373,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 9-12"
                 },
                 {
@@ -1393,7 +1393,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 13-17"
                 },
                 {
@@ -1413,7 +1413,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 18-21"
                 },
                 {
@@ -1433,7 +1433,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 22-26"
                 },
                 {
@@ -1453,7 +1453,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 27-28"
                 },
                 {
@@ -1473,7 +1473,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 29-31"
                 },
                 {
@@ -1493,7 +1493,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 32"
                 },
                 {
@@ -1513,7 +1513,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Deut 33-34"
                 }
             ]
@@ -1539,7 +1539,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 1-2"
                 },
                 {
@@ -1559,7 +1559,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 3-5"
                 },
                 {
@@ -1579,7 +1579,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 6-7"
                 },
                 {
@@ -1599,7 +1599,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 8-9"
                 },
                 {
@@ -1619,7 +1619,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 10-12"
                 },
                 {
@@ -1639,7 +1639,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 13-14"
                 },
                 {
@@ -1659,7 +1659,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 15-17"
                 },
                 {
@@ -1679,7 +1679,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 18-19"
                 },
                 {
@@ -1699,7 +1699,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 20-21"
                 },
                 {
@@ -1719,7 +1719,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 22-23"
                 },
                 {
@@ -1739,7 +1739,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Josh 24"
                 },
                 {
@@ -1759,7 +1759,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 1-3"
                 },
                 {
@@ -1779,7 +1779,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 4-5"
                 },
                 {
@@ -1799,7 +1799,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 6-7"
                 },
                 {
@@ -1819,7 +1819,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 8"
                 },
                 {
@@ -1839,7 +1839,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 9"
                 },
                 {
@@ -1859,7 +1859,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 10-12"
                 },
                 {
@@ -1879,7 +1879,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 13-15"
                 },
                 {
@@ -1899,7 +1899,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 16"
                 },
                 {
@@ -1919,7 +1919,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 17-18"
                 },
                 {
@@ -1939,7 +1939,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 19"
                 },
                 {
@@ -1959,7 +1959,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Judg 20-21"
                 },
                 {
@@ -1979,7 +1979,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ruth 1"
                 },
                 {
@@ -1999,7 +1999,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ruth 2-3"
                 },
                 {
@@ -2019,7 +2019,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ruth 4"
                 }
             ]
@@ -2045,7 +2045,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 1-2"
                 },
                 {
@@ -2065,7 +2065,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 3-5"
                 },
                 {
@@ -2085,7 +2085,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 6-8"
                 },
                 {
@@ -2105,7 +2105,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 9-10"
                 },
                 {
@@ -2125,7 +2125,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 11-13"
                 },
                 {
@@ -2145,7 +2145,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 14"
                 },
                 {
@@ -2165,7 +2165,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 15-16"
                 },
                 {
@@ -2185,7 +2185,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 17-18"
                 },
                 {
@@ -2205,7 +2205,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 19-20"
                 },
                 {
@@ -2225,7 +2225,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 21-23"
                 },
                 {
@@ -2245,7 +2245,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 24-25"
                 },
                 {
@@ -2265,7 +2265,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 26-28"
                 },
                 {
@@ -2285,7 +2285,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Sam 29-31"
                 },
                 {
@@ -2305,7 +2305,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 1-2"
                 },
                 {
@@ -2325,7 +2325,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 3-4"
                 },
                 {
@@ -2345,7 +2345,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 5-7"
                 },
                 {
@@ -2365,7 +2365,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 8-10"
                 },
                 {
@@ -2385,7 +2385,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 11-12"
                 },
                 {
@@ -2405,7 +2405,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 13"
                 },
                 {
@@ -2425,7 +2425,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 14-15"
                 },
                 {
@@ -2445,7 +2445,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 16-17"
                 },
                 {
@@ -2465,7 +2465,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 18-19"
                 },
                 {
@@ -2485,7 +2485,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 20-21"
                 },
                 {
@@ -2505,7 +2505,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 22"
                 },
                 {
@@ -2525,7 +2525,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Sam 23-24"
                 }
             ]
@@ -2551,7 +2551,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 1"
                 },
                 {
@@ -2571,7 +2571,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 2-3"
                 },
                 {
@@ -2591,7 +2591,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 4-5"
                 },
                 {
@@ -2611,7 +2611,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 6-7"
                 },
                 {
@@ -2631,7 +2631,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 8"
                 },
                 {
@@ -2651,7 +2651,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 9-10"
                 },
                 {
@@ -2671,7 +2671,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 11"
                 },
                 {
@@ -2691,7 +2691,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 12"
                 },
                 {
@@ -2711,7 +2711,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 13-14"
                 },
                 {
@@ -2731,7 +2731,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 15-16"
                 },
                 {
@@ -2751,7 +2751,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 17-18"
                 },
                 {
@@ -2771,7 +2771,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 19-20"
                 },
                 {
@@ -2791,7 +2791,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Kgs 21-22"
                 },
                 {
@@ -2811,7 +2811,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 1-3"
                 },
                 {
@@ -2831,7 +2831,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 4-5"
                 },
                 {
@@ -2851,7 +2851,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 6-7"
                 },
                 {
@@ -2871,7 +2871,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 8-9"
                 },
                 {
@@ -2891,7 +2891,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 10-11"
                 },
                 {
@@ -2911,7 +2911,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 12-13"
                 },
                 {
@@ -2931,7 +2931,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 14-15"
                 },
                 {
@@ -2951,7 +2951,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 16-17"
                 },
                 {
@@ -2971,7 +2971,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 18-19"
                 },
                 {
@@ -2991,7 +2991,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 20-21"
                 },
                 {
@@ -3011,7 +3011,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 22-23"
                 },
                 {
@@ -3031,7 +3031,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Kgs 24-25"
                 }
             ]
@@ -3057,7 +3057,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 1-2"
                 },
                 {
@@ -3077,7 +3077,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 3-4"
                 },
                 {
@@ -3097,7 +3097,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 5-6"
                 },
                 {
@@ -3117,7 +3117,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 7-9"
                 },
                 {
@@ -3137,7 +3137,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 10-11"
                 },
                 {
@@ -3157,7 +3157,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 12-14"
                 },
                 {
@@ -3177,7 +3177,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 15-16"
                 },
                 {
@@ -3197,7 +3197,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 17-19"
                 },
                 {
@@ -3217,7 +3217,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 20-22"
                 },
                 {
@@ -3237,7 +3237,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 23-25"
                 },
                 {
@@ -3257,7 +3257,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 26-28"
                 },
                 {
@@ -3277,7 +3277,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "1Chr 29"
                 },
                 {
@@ -3297,7 +3297,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 1-2"
                 },
                 {
@@ -3317,7 +3317,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 3-5"
                 },
                 {
@@ -3337,7 +3337,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 6-7"
                 },
                 {
@@ -3357,7 +3357,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 8-9"
                 },
                 {
@@ -3377,7 +3377,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 10-12"
                 },
                 {
@@ -3397,7 +3397,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 13-16"
                 },
                 {
@@ -3417,7 +3417,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 17-19"
                 },
                 {
@@ -3437,7 +3437,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 20-21"
                 },
                 {
@@ -3457,7 +3457,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 22-24"
                 },
                 {
@@ -3477,7 +3477,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 25-27"
                 },
                 {
@@ -3497,7 +3497,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 28-29"
                 },
                 {
@@ -3517,7 +3517,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 30-33"
                 },
                 {
@@ -3537,7 +3537,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "2Chr 34-36"
                 }
             ]
@@ -3563,7 +3563,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 1-2"
                 },
                 {
@@ -3583,7 +3583,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 3"
                 },
                 {
@@ -3603,7 +3603,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 4-5"
                 },
                 {
@@ -3623,7 +3623,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 6"
                 },
                 {
@@ -3643,7 +3643,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 7"
                 },
                 {
@@ -3663,7 +3663,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 8"
                 },
                 {
@@ -3683,7 +3683,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 9"
                 },
                 {
@@ -3703,7 +3703,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezra 10"
                 },
                 {
@@ -3723,7 +3723,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 1-2"
                 },
                 {
@@ -3743,7 +3743,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 3"
                 },
                 {
@@ -3763,7 +3763,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 4-5"
                 },
                 {
@@ -3783,7 +3783,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 6"
                 },
                 {
@@ -3803,7 +3803,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 7"
                 },
                 {
@@ -3823,7 +3823,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 8"
                 },
                 {
@@ -3843,7 +3843,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 9"
                 },
                 {
@@ -3863,7 +3863,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 10"
                 },
                 {
@@ -3883,7 +3883,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 11"
                 },
                 {
@@ -3903,7 +3903,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 12"
                 },
                 {
@@ -3923,7 +3923,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Neh 13"
                 },
                 {
@@ -3943,7 +3943,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 1"
                 },
                 {
@@ -3963,7 +3963,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 2"
                 },
                 {
@@ -3983,7 +3983,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 3-4"
                 },
                 {
@@ -4003,7 +4003,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 5-6"
                 },
                 {
@@ -4023,7 +4023,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 7-8"
                 },
                 {
@@ -4043,7 +4043,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Esth 9-10"
                 }
             ]
@@ -4069,7 +4069,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 1-2"
                 },
                 {
@@ -4089,7 +4089,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 3-5"
                 },
                 {
@@ -4109,7 +4109,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 6-8"
                 },
                 {
@@ -4129,7 +4129,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 9-10"
                 },
                 {
@@ -4149,7 +4149,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 11-13"
                 },
                 {
@@ -4169,7 +4169,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 14-16"
                 },
                 {
@@ -4189,7 +4189,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 17-20"
                 },
                 {
@@ -4209,7 +4209,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 21-23"
                 },
                 {
@@ -4229,7 +4229,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 24-26"
                 },
                 {
@@ -4249,7 +4249,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 27-28"
                 },
                 {
@@ -4269,7 +4269,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 29-30"
                 },
                 {
@@ -4289,7 +4289,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 31-33"
                 },
                 {
@@ -4309,7 +4309,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 34-36"
                 },
                 {
@@ -4329,7 +4329,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 37-39"
                 },
                 {
@@ -4349,7 +4349,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 40-41"
                 },
                 {
@@ -4369,7 +4369,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 42-43"
                 },
                 {
@@ -4389,7 +4389,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 44-45"
                 },
                 {
@@ -4409,7 +4409,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 46-48"
                 },
                 {
@@ -4429,7 +4429,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 49-50"
                 },
                 {
@@ -4449,7 +4449,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 51-53"
                 },
                 {
@@ -4469,7 +4469,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 54-55"
                 },
                 {
@@ -4489,7 +4489,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 56-58"
                 },
                 {
@@ -4509,7 +4509,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 59-61"
                 },
                 {
@@ -4529,7 +4529,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 62-64"
                 },
                 {
@@ -4549,7 +4549,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Isa 65-66"
                 }
             ]
@@ -4575,7 +4575,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 1-2"
                 },
                 {
@@ -4595,7 +4595,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 3-4"
                 },
                 {
@@ -4615,7 +4615,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 5-6"
                 },
                 {
@@ -4635,7 +4635,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 7-9"
                 },
                 {
@@ -4655,7 +4655,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 10-11"
                 },
                 {
@@ -4675,7 +4675,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 12-13"
                 },
                 {
@@ -4695,7 +4695,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 14-15"
                 },
                 {
@@ -4715,7 +4715,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 16-18"
                 },
                 {
@@ -4735,7 +4735,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 19-22"
                 },
                 {
@@ -4755,7 +4755,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 23-25"
                 },
                 {
@@ -4775,7 +4775,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 26-29"
                 },
                 {
@@ -4795,7 +4795,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 30-31"
                 },
                 {
@@ -4815,7 +4815,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 32-34"
                 },
                 {
@@ -4835,7 +4835,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 35-38"
                 },
                 {
@@ -4855,7 +4855,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 39-43"
                 },
                 {
@@ -4875,7 +4875,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 44-46"
                 },
                 {
@@ -4895,7 +4895,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 47-48"
                 },
                 {
@@ -4915,7 +4915,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 49"
                 },
                 {
@@ -4935,7 +4935,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 50"
                 },
                 {
@@ -4955,7 +4955,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 51"
                 },
                 {
@@ -4975,7 +4975,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jer 52"
                 },
                 {
@@ -4995,7 +4995,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "LAMENTATIONS 1"
                 },
                 {
@@ -5015,7 +5015,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "LAMENTATIONS 2"
                 },
                 {
@@ -5035,7 +5035,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "LAMENTATIONS 3"
                 },
                 {
@@ -5055,7 +5055,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "LAMENTATIONS 4-5"
                 }
             ]
@@ -5081,7 +5081,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 1-3"
                 },
                 {
@@ -5101,7 +5101,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 4-8"
                 },
                 {
@@ -5121,7 +5121,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 9-12"
                 },
                 {
@@ -5141,7 +5141,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 13-15"
                 },
                 {
@@ -5161,7 +5161,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 16"
                 },
                 {
@@ -5181,7 +5181,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 17-19"
                 },
                 {
@@ -5201,7 +5201,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 20-21"
                 },
                 {
@@ -5221,7 +5221,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 22-23"
                 },
                 {
@@ -5241,7 +5241,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 24-26"
                 },
                 {
@@ -5261,7 +5261,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 27-28"
                 },
                 {
@@ -5281,7 +5281,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 29-30"
                 },
                 {
@@ -5301,7 +5301,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 31-32"
                 },
                 {
@@ -5321,7 +5321,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 33-34"
                 },
                 {
@@ -5341,7 +5341,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 35-37"
                 },
                 {
@@ -5361,7 +5361,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 38-39"
                 },
                 {
@@ -5381,7 +5381,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 40-41"
                 },
                 {
@@ -5401,7 +5401,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 42-44"
                 },
                 {
@@ -5421,7 +5421,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 45-47"
                 },
                 {
@@ -5441,7 +5441,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Ezek 48"
                 },
                 {
@@ -5461,7 +5461,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 1-2"
                 },
                 {
@@ -5481,7 +5481,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 3-4"
                 },
                 {
@@ -5501,7 +5501,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 5-6"
                 },
                 {
@@ -5521,7 +5521,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 7-8"
                 },
                 {
@@ -5541,7 +5541,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 9"
                 },
                 {
@@ -5561,7 +5561,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Dan 10-12"
                 }
             ]
@@ -5587,7 +5587,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 1,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hos 1-3"
                 },
                 {
@@ -5607,7 +5607,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 2,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hos 4-6"
                 },
                 {
@@ -5627,7 +5627,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 3,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hos 7-8"
                 },
                 {
@@ -5647,7 +5647,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 4,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hos 9-12"
                 },
                 {
@@ -5667,7 +5667,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 5,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hos 13-14"
                 },
                 {
@@ -5687,7 +5687,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 6,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Joel 1"
                 },
                 {
@@ -5707,7 +5707,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 7,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Joel 2-3"
                 },
                 {
@@ -5727,7 +5727,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 8,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Amos 1-2"
                 },
                 {
@@ -5747,7 +5747,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 9,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Amos 3-4"
                 },
                 {
@@ -5767,7 +5767,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 10,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Amos 5-6"
                 },
                 {
@@ -5787,7 +5787,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 11,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Amos 7-9"
                 },
                 {
@@ -5807,7 +5807,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 12,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Obad 1-21"
                 },
                 {
@@ -5827,7 +5827,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 13,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Jonah 1-4"
                 },
                 {
@@ -5847,7 +5847,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 14,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Mic 1-3"
                 },
                 {
@@ -5867,7 +5867,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 15,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Mic 4-5"
                 },
                 {
@@ -5887,7 +5887,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 16,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Mic 6-7"
                 },
                 {
@@ -5907,7 +5907,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 17,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Nah 1-3"
                 },
                 {
@@ -5927,7 +5927,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 18,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hab 1-3"
                 },
                 {
@@ -5947,7 +5947,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 19,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Zeph 1-2"
                 },
                 {
@@ -5967,7 +5967,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 20,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Zeph 3"
                 },
                 {
@@ -5987,7 +5987,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 21,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Hag 1-2"
                 },
                 {
@@ -6007,7 +6007,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 22,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Zech 1-5"
                 },
                 {
@@ -6027,7 +6027,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 23,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Zech 6-9"
                 },
                 {
@@ -6047,7 +6047,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 24,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "Zech 10-14"
                 },
                 {
@@ -6067,7 +6067,7 @@ export const DiscipleshipJournalReadingPlanData = {
                 },
                 {
                     day: 25,
-                    type: "law-and-prophets",
+                    type: "lawAndProphets",
                     verse: "MALACHI 1-4"
                 }
             ]

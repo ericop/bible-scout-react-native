@@ -28,7 +28,7 @@ let increment = () => {
 
 // https://github.com/pmndrs/zustand#first-create-a-store
 const useStore = create((set, get) => ({
-    "law-and-prophets": {month:1,day:1},
+    "lawAndProphets": {month:1,day:1},
     wisdom: {month:1,day:1},
     gospels: {month:1,day:1},
     epistles: {month:1,day:1},
@@ -43,7 +43,7 @@ const useStore = create((set, get) => ({
         //incrementLocalStoreOnly()
     
             switch (readingCategory) {
-                case 'law-and-prophets':
+                case 'lawAndProphets':
                     //m.route.set('/wisdom')
                     break
                 case 'wisdom':

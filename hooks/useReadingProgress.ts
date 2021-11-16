@@ -5,20 +5,20 @@ import useStoredState from './useAsyncStorage'
 
 export default function useReadingProgress() {
     enum ReadingCategory {
-        lawAndProphets = 'law-and-prophets',
+        lawAndProphets = 'lawAndProphets',
         wisdom = 'wisdom',
         gospels = 'gospels',
         epistles = 'epistles'
     }
     type ReadingState = {
-        "law-and-prophets": { month: number, day: number },
+        lawAndProphets: { month: number, day: number },
         wisdom: { month: number, day: number },
         gospels: { month: number, day: number },
         epistles: { month: number, day: number }
     }
 
     const defaultReadingState: ReadingState = {
-        "law-and-prophets": { month: 1, day: 1 },
+        lawAndProphets: { month: 1, day: 1 },
         wisdom: { month: 1, day: 1 },
         gospels: { month: 1, day: 1 },
         epistles: { month: 1, day: 1 }
