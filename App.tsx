@@ -8,10 +8,14 @@ import Navigation from './navigation';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Colors from './constants/Colors';
 import Theme from './constants/Themes';
+import globalState from './hooks/globalState';
 
 export default function App() {
+  globalState.readingProgress = 
+
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+
 
   if (!isLoadingComplete) {
     return null;
