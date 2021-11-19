@@ -11,4 +11,5 @@ biblescout app on react-native
 - [ ] Add https://docs.expo.dev/versions/v43.0.0/sdk/audio/#playing-sounds
 
 ## Screenshot on Android
-![Screenshot_20211118-222230_Expo Go](https://user-images.githubusercontent.com/5218249/142559656-4566201e-f34b-4a0b-9891-78336c3e95a5.jpg)
+<!-- ![Screenshot_20211118-222230_Expo Go](https://user-images.githubusercontent.com/5218249/142559656-4566201e-f34b-4a0b-9891-78336c3e95a5.jpg) -->
+<img src="https://user-images.githubusercontent.com/5218249/142559656-4566201e-f34b-4a0b-9891-78336c3e95a5.jpg" width="320" />
