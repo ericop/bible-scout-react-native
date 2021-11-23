@@ -9,6 +9,7 @@ import axios from 'axios';
 import { RootTabScreenProps } from '../types';
 //import navigation from '../navigation';
 import {useRoute} from '@react-navigation/native';
+import globalState from '../hooks/globalState';
 
 export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'>) {
   const [error, setError] = useState<any>(null);
@@ -19,6 +20,9 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
+    globalState.readingProgress
+
+
     axios({
       url: 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy',
       params: {
