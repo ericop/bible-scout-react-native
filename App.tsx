@@ -10,6 +10,7 @@ import Colors from './constants/Colors';
 import Theme from './constants/Themes';
 import globalState from './hooks/globalState';
 import useReadingProgress from './hooks/useReadingProgress';
+import { GlobalState } from './types';
 
 export default function App() {
   globalState.readingProgress = useReadingProgress;
