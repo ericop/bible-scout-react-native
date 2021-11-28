@@ -38,3 +38,20 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+export type ReadingState = {
+  lawAndProphets: { month: number, day: number },
+  wisdom: { month: number, day: number },
+  gospels: { month: number, day: number },
+  epistles: { month: number, day: number }
+}
+
+export type GlobalState = {
+    readingProgress: () => {
+        getReadingProgress: (readingCategory: ReadingState) => { month: number, day: number },
+        updateReadingProgress: (readingCategory: ReadingState, month: number, day: number) => void,
+        incrementReadingByCategory: (readingCategory: ReadingState) => void,
+        decrementReadingByCategory: (readingCategory: ReadingState) => void,
+        nextReadingCategory: (readingCategory: ReadingState) => string
+    }
+  };

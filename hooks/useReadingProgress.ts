@@ -40,7 +40,7 @@ export default function useReadingProgress() {
         }
         console.log('setReadingProgress', updatedProgress)
         setReadingProgress(updatedProgress)
-        return updatedProgress
+        //return updatedProgress
     }
 
     const incrementReadingByCategory = (readingCategory: ReadingCategory) => {
@@ -77,15 +77,15 @@ export default function useReadingProgress() {
         }
         updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
-    const nextReadingCategory =  (readingCategory: string) : string =>  {
+    const nextReadingCategory =  (readingCategory: ReadingCategory) : string =>  {
             switch (readingCategory) {
-                case 'LawAndProphets':
+                case ReadingCategory.lawAndProphets:
                     return 'Wisdom'
-                case 'Wisdom':
+                case ReadingCategory.wisdom:
                     return 'Gospels'
-                case 'Gospels':
+                case ReadingCategory.gospels:
                     return 'Epistles'
-                case 'Epistles':
+                case ReadingCategory.epistles:
                     return 'Home'
             }
             return 'Home'
