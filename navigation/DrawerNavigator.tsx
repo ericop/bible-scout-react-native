@@ -30,7 +30,9 @@ export default function DrawerNavigator(propsIn: any) {
     <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props} />} screenOptions={{
       headerStyle: {
         backgroundColor: propsIn.theme === 'dark' ? Themes.dark.colors.accent : Themes.light.colors.primary
-      } }}>
+      }, headerTitleStyle: {
+        color: Themes.light.colors.text
+      }  }}>
       <MyDrawer.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }}/>
       <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'Law And Prophets',}} />
       <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom' }} />

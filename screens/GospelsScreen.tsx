@@ -17,13 +17,8 @@ export default function GospelsScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Gospels</Text>
-
       <ReadingCard title='Gospels' cardContent={cardContextGospels} />
-      <FAB style={styles.fab}
-    icon="christianity-outline"
-    onPress={() => crossIt()}
-  />
+      
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       {/* <EditScreenInfo path="/screens/GospelsScreen.tsx" /> */}
     </View>
