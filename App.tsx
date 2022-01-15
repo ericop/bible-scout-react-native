@@ -23,12 +23,12 @@ export default function App() {
     return null;
   } else {
     return (
-      <PaperProvider theme={colorScheme === 'dark'? Theme.dark : Theme.light}>
-        <SafeAreaProvider>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
-        </SafeAreaProvider>
-      </PaperProvider>
+<PaperProvider theme={colorScheme === 'dark'? Theme.dark : Theme.light}>
+<SafeAreaProvider>
+<Navigation colorScheme={colorScheme} />
+<StatusBar />
+</SafeAreaProvider>
+</PaperProvider>
     );
   }
 };
