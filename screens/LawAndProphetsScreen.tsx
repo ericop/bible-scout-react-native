@@ -1,29 +1,15 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { FAB } from 'react-native-paper';
 import ReadingCard from '../components/ReadingCard';
 
 export default function LawAndProphetsScreen() {
-  var count = 0
-  var crossIt = () => {
-    count += 1
-    console.log('cross it',count)
-  }
-
-  var cardContextLaw = {bibleVersion:'ENGESVO1ET', bibleBook:'Gen', bibleChapterAndVerse:'1'};
 
   return (
     <View style={styles.container}>
-      <ReadingCard title='LawAndProphetsScreen' cardContent={cardContextLaw} />
+      <ReadingCard title='LawAndProphets' />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      {/* <EditScreenInfo path="/screens/LawAndProphetsScreen.tsx" /> */}
-      <FAB style={styles.fab}
-    icon="celtic-cross"
-    onPress={() => crossIt()}
-  />
     </View>
   );
 }
@@ -33,7 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#239554'
   },
   title: {
     fontSize: 20,

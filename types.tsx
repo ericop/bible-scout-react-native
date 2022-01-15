@@ -62,3 +62,10 @@ export type GlobalState = {
         nextReadingCategory: (readingCategory: ReadingState) => string
     }
   };
+
+  export type BibleTextVerse = {
+    book: string, 
+    chapter: string, 
+    verse: string,
+    text: string
+  }

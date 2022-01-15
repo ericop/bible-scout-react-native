@@ -127,7 +127,7 @@ export const BibleMediaService = () => {
                     headers: { "x-api-key": awsApiKey }
                 })
 
-                return req
+                return Promise.all([req])
             }
 
             let chapters = []

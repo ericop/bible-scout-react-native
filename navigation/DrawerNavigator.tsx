@@ -65,7 +65,7 @@ export function DrawerContent(props: any) {
           onPress={() => navTo('Home')}
         />
         <Drawer.Item
-          label='LawAndProphets'
+          label='Law And Prophets'
           icon='script-text-outline'
           active={active === 'LawAndProphets'}
           onPress={() => navTo('LawAndProphets')}
