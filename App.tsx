@@ -13,7 +13,7 @@ import useReadingProgress from './hooks/useReadingProgress';
 import { GlobalState } from './types';
 
 export default function App() {
-  globalState.readingProgress = useReadingProgress;
+  globalState.readingProgress = useReadingProgress();
 
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();

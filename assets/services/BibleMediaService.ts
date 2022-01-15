@@ -1,13 +1,15 @@
 import axios from 'axios'
-import * as DiscipleshipJournalReadingPlanData from '../../constants/discipleship-journal-plan.data'
+import {DiscipleshipJournalReadingPlanData} from '../../constants/discipleship-journal-plan.data'
+import { ReadingCategory } from '../../types'
 
 export const BibleMediaService = () => {
     let djPlan: any = DiscipleshipJournalReadingPlanData
+    console.log('djPlan', djPlan)
     let baseUrl = 'https://dbt.io'
     let azureCodeKey = 'UCgA0aEhZUMUtOmZV3WORgpB9EaJ05qLHJZV6EKPu/Ito84LKpLKsg=='
     let azureUrl = 'https://httpbiblereadingpalrequest.azurewebsites.net/api/v2'
     let awsApiKey = 'Genesis1-2InTheBeginningGodCreated'
-    let awsUrl = 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy/?'
+    let awsUrl = 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy'
     let readingCategory = ''
     let audioBibleVersion = 'ENGESVO1DA' // TODO should be '' and https://reactnavigation.org/docs/use-navigation-state
     let textBibleVersion = 'ENGESVO1ET' // TODO should be ''
@@ -107,7 +109,53 @@ export const BibleMediaService = () => {
             localStorage.setItem(readingCategory, JSON.stringify(readingProgress))
         },
 
-        getTextAxios: (bibleVersion: string, book: string, verseString: string) => {
+        getText: (bibleVersion: string, verseInfo: string) => {
+            let [book, verseString] = verseInfo.split(' ')
+            let verseObj = verseIntoPieces(verseString)
+      
+            const isSingleChapter = !verseObj.lastChapter
+            if (isSingleChapter) {
+                let endApiUrlText = `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${verseObj.firstChapter}${verseObj.firstVerse ? '&verse_start=' + verseObj.firstVerse : ''}${verseObj.lastVerse ? '&verse_end=' + verseObj.lastVerse : ''}`
+                console.log('endApiUrlText:', endApiUrlText)
+
+                let req = axios({
+                    url: awsUrl,
+                    params: {
+                        urlText: endApiUrlText
+                    },
+                    method: 'GET',
+                    headers: { "x-api-key": awsApiKey }
+                })
+
+                return req
+            }
+
+            let chapters = []
+            for (let index = verseObj.firstChapter; index <= verseObj.lastChapter; index++) {
+                chapters.push(index)
+            }
+
+            let promiseArray: any[] = [];
+            // console.log('chaps', chapters)
+            chapters.forEach(chapter => {
+                let endApiUrlText = `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${chapter}`
+
+                let req = axios({
+                    url: awsUrl,
+                    params: {
+                        urlText: endApiUrlText
+                    },
+                    method: 'GET',
+                    headers: { "x-api-key": awsApiKey }
+                })
+
+                promiseArray.push(req)
+            })
+            return Promise.all(promiseArray)
+        },
+
+        getTextSimple: (bibleVersion: string, verseInfo: string) => {
+            let [book, verseString] = verseInfo.split(' ')
             var verseObj = verseIntoPieces(verseString)
             var urlText = `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${verseObj.firstChapter}${verseObj.firstVerse ? '&verse_start=' + verseObj.firstVerse : ''}${verseObj.lastVerse ? '&verse_end=' + verseObj.lastVerse : ''}`
             console.log('urlText:', urlText)
@@ -115,8 +163,7 @@ export const BibleMediaService = () => {
             if (!verseObj.lastChapter) {
                 // var dataReq = buildTextDataObject(bibleVersion, book, verseObj.firstChapter, verseObj.firstVerse, verseObj.lastVerse)
                 // console.log('dataReq', dataReq)
-
-                var req = axios({url: awsUrl + new URLSearchParams({urlText: urlText}),
+                var req =  axios({url: awsUrl + '/?' + new URLSearchParams({urlText: urlText}),
                     method: 'GET',
                     headers: { "x-api-key": awsApiKey}
                 })
@@ -132,7 +179,7 @@ export const BibleMediaService = () => {
             var promiseArray: any[] = [];
             // console.log('chaps', chapters)
             chapters.forEach(chapter => {
-                var req = axios({url: awsUrl + new URLSearchParams({urlText: `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${chapter}`}),
+                var req =  axios({url: awsUrl + '/?' + new URLSearchParams({urlText: `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${chapter}`}),
                     method: 'GET',
                     headers: { "x-api-key": awsApiKey}
                 })
@@ -140,48 +187,15 @@ export const BibleMediaService = () => {
                 promiseArray.push(req)
             })
             return Promise.all(promiseArray)
-
         },
 
-        getText: (bibleVersion: string, book: string, verseString: string) => {
-            var verseObj = verseIntoPieces(verseString)
-            var urlText = `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${verseObj.firstChapter}${verseObj.firstVerse ? '&verse_start=' + verseObj.firstVerse : ''}${verseObj.lastVerse ? '&verse_end=' + verseObj.lastVerse : ''}`
-            console.log('urlText:', urlText)
-            // single chapter
-            if (!verseObj.lastChapter) {
-                // var dataReq = buildTextDataObject(bibleVersion, book, verseObj.firstChapter, verseObj.firstVerse, verseObj.lastVerse)
-                // console.log('dataReq', dataReq)
-
-                var req =  axios({url: awsUrl + new URLSearchParams({urlText: urlText}),
-                    method: 'GET',
-                    headers: { "x-api-key": awsApiKey}
-                })
-
-                return req
-            }
-
-            var chapters = []
-            for (let index = verseObj.firstChapter; index <= verseObj.lastChapter; index++) {
-                chapters.push(index)
-            }
-
-            var promiseArray: any[] = [];
-            // console.log('chaps', chapters)
-            chapters.forEach(chapter => {
-                var req =  axios({url: awsUrl + new URLSearchParams({urlText: `${baseUrl}/text/verse?reply=json&v=2&dam_id=${bibleVersion}&book_id=${book}&chapter_id=${chapter}`}),
-                    method: 'GET',
-                    headers: { "x-api-key": awsApiKey}
-                })
-
-                promiseArray.push(req)
-            })
-            return Promise.all(promiseArray)
-
-        },
-
-        getDiscipleShipJournalVerse: (month: string, day: string, type: string) => {
-            //console.log('getDiscipleShipJournalVerse', month, day, type)
-            return djPlan.months.find((m: any) => m.monthNum === month).readings.find((v: any) => v.day === day && v.type === type)
+        getDiscipleShipJournalVerse: (readingCategory: ReadingCategory, month: number, day: number) => {
+            console.log('getDiscipleShipJournalVerse', month, day, readingCategory)
+            console.log('getDiscipleShipJournalVerse djPlan', djPlan.months
+                .find((m: any) => m.monthNum === month))
+            return djPlan.months
+            .find((m: any) => m.monthNum === month).readings
+            .find((v: any) => v.day === day && v.type === readingCategory)
         },
 
         getAudioFile: (httpUrl: string) => `${azureUrl}?urlText=${encodeURIComponent(httpUrl)}&code=${encodeURIComponent(azureCodeKey)}`,
@@ -211,6 +225,7 @@ export const BibleMediaService = () => {
 
         clearCachedTextAndAudio: () => {
 
-        }
+        },
+        verseIntoPieces
     }
 }

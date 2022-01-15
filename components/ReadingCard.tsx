@@ -5,11 +5,12 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { IconButton, Card, FAB } from 'react-native-paper';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { RootTabScreenProps } from '../types';
+import axios, { AxiosResponse } from 'axios';
+import { RootTabScreenProps, ReadingCategory } from '../types';
 //import navigation from '../navigation';
 import {useRoute} from '@react-navigation/native';
 import globalState from '../hooks/globalState';
+import {BibleMediaService} from '../assets/services/BibleMediaService';
 
 export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'>) {
   const [error, setError] = useState<any>(null);
@@ -20,37 +21,61 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    globalState.readingProgress
+    console.log('globalState.readingProgress:',globalState.readingProgress)
+    console.log('route:',route)
+    let bibleService = BibleMediaService()
+    let audioBibleVersion = ''
+    let textBibleVersion = ''
+    let reading: { month: number, day: number } =  globalState.readingProgress.getReadingProgress(ReadingCategory[route.name])
+    console.log('reading:', reading)
 
+    let verseInfo: {day: number, type: string, verse: string } = bibleService.getDiscipleShipJournalVerse(ReadingCategory[route.name], reading.month, reading.day, )
+    console.log('verseInfo',verseInfo)
 
-    axios({
-      url: 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy',
-      params: {
-        urlText: 'https://dbt.io/text/verse?reply=json&v=2&dam_id=ENGESVN1ET&book_id=Acts&chapter_id=1&verse_start=12&verse_end=26'
-      },
-      method: 'GET',
-      headers: { 'x-api-key': 'Genesis1-2InTheBeginningGodCreated' }
-    }).then(resp => {
-      setIsLoaded(true);
-      console.log('axios resp:', resp.data)
-      const versesTemp = resp.data.map((x:{book_name: string, chapter_id: string, verse_id: string, verse_text: string}) => {
+    //switch (ReadingCategory[route.name]) { // for use when Pascal case
+      switch (ReadingCategory[route.name]) {
+      case ReadingCategory.LawAndProphets:
+      case ReadingCategory.Wisdom:
+        audioBibleVersion = "ENGESVO1DA";
+        textBibleVersion = "ENGESVO1ET";
+        break;
+      case ReadingCategory.Gospels:
+      case ReadingCategory.Epistles:
+        audioBibleVersion = "ENGESVN1DA";
+        textBibleVersion = "ENGESVN1ET";
+        break;
+    }
 
-        const obj = {
-          book: x.book_name,
-          chapter: x.chapter_id,
-          verse: x.verse_id,
-          text: x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+    //let axReq = bibleService.getText(textBibleVersion, verseInfo.verse)
+    let axReq = bibleService.getText(textBibleVersion, verseInfo.verse)
+    axReq
+    .then((resp: AxiosResponse<any>) => {
+        setIsLoaded(true);
+        console.log('axios resp:', resp)
+        console.log('axios resp.data:', resp.data)
+        if (!resp.data){
+          return setError({message:`no 'resp.data' returned from API. If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
         }
-        console.log('my obj', obj)
-        return obj;
+        const versesTemp = resp.data.map((x:{book_name: string, chapter_id: string, verse_id: string, verse_text: string}) => {
+  
+          const obj = {
+            book: x.book_name,
+            chapter: x.chapter_id,
+            verse: x.verse_id,
+            text: x.verse_text.replace(/\n/g, '').replace(/\t/g, '') // remove newline and indent from all text
+          }
+          console.log('my obj', obj)
+          return obj;
+        })
+        setItems(versesTemp)
+      }).catch((err: any) => {
+        setIsLoaded(true);
+        console.error('call failed with error:', err)
+        setError({message:`${err} If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
       })
-      setItems(versesTemp)
-    }).catch((err: any) => {
-      setIsLoaded(true);
-      //console.error('call failed with error:', err)
-      setError(err)
-    })
-  }, [])
+    
+  }, 
+  [])
 
   if (error !== null) {
     return <Text>Error: {error.message}</Text>;

@@ -34,7 +34,7 @@ export default function DrawerNavigator(propsIn: any) {
         color: Themes.light.colors.text
       }  }}>
       <MyDrawer.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }}/>
-      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'Law And Prophets',}} />
+      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'LawAndProphets',}} />
       <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom' }} />
       <MyDrawer.Screen name="Gospels" component={GospelsScreen} options={{ title: 'Gospels' }} />
       <MyDrawer.Screen name="Epistles" component={EpistlesScreen} options={{ title: 'Epistles' }} />
@@ -57,6 +57,7 @@ export function DrawerContent(props: any) {
   return (
     <DrawerContentScrollView {...props}>
       <Drawer.Section title='Bible Scout'>
+        {/* TODO this could ve pulled out into JSON and mapped over */}
         <Drawer.Item
           label='Home'
           icon='home'

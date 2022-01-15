@@ -39,6 +39,13 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   NativeStackScreenProps<RootStackParamList>
 >;
 
+export enum ReadingCategory {
+  LawAndProphets = 'lawAndProphets',
+  Wisdom = 'wisdom',
+  Gospels = 'gospels',
+  Epistles = 'epistles'
+}
+
 export type ReadingState = {
   lawAndProphets: { month: number, day: number },
   wisdom: { month: number, day: number },

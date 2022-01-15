@@ -36,7 +36,7 @@ export default function useReadingProgress() {
     const updateReadingProgress = (readingCategory: ReadingCategory, month: number, day: number) => {
         let progress = readingProgress // all categories
         let updatedProgress = { ...progress as unknown as ReadingState,
-            readingCategory : {month: month, day: day}
+            [readingCategory] : {month: month, day: day}
         }
         console.log('setReadingProgress', updatedProgress)
         setReadingProgress(updatedProgress)
@@ -78,18 +78,17 @@ export default function useReadingProgress() {
         updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
     const nextReadingCategory =  (readingCategory: ReadingCategory) : string =>  {
-            switch (readingCategory) {
-                case ReadingCategory.lawAndProphets:
-                    return 'Wisdom'
-                case ReadingCategory.wisdom:
-                    return 'Gospels'
-                case ReadingCategory.gospels:
-                    return 'Epistles'
-                case ReadingCategory.epistles:
-                    return 'Home'
-            }
-            return 'Home'
+        switch (readingCategory) {
+            case ReadingCategory.lawAndProphets:
+                return 'Wisdom'
+            case ReadingCategory.wisdom:
+                return 'Gospels'
+            case ReadingCategory.gospels:
+                return 'Epistles'
+            case ReadingCategory.epistles:
+                return 'Home'
         }
+    }
 
     return {
         getReadingProgress,
