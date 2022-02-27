@@ -9,7 +9,6 @@ export default function LawAndProphetsScreen() {
   return (
     <View style={styles.container}>
       <ReadingCard title='LawAndProphets' />
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
   );
 }
