@@ -25,6 +25,7 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
 
   useEffect(() => {
     console.log('globalState.readingProgress:',globalState.readingProgress)
+    console.log('globalState.readingProgress.readingProgress:',globalState.readingProgress.readingProgress)
     console.log('route:',route)
     let bibleService = BibleMediaService()
     let audioBibleVersion = ''
@@ -102,6 +103,7 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
                 <Text>
+                  {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
                     return (
                       <Text key={idx + 'verse-container'} style={styles.verseContainer}>

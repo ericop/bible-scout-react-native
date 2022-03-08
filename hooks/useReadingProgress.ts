@@ -91,6 +91,7 @@ export default function useReadingProgress() {
     }
 
     return {
+        readingProgress,
         getReadingProgress,
         updateReadingProgress,
         incrementReadingByCategory,
