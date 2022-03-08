@@ -95,25 +95,25 @@ export default function AppBarBottom() {
           {/* App bar bottom start */}
           <View style={styles.bottomAppBar}>
           {/* labelStyle={styles.bottomAppBarButtonContent} didn't seem to to work on these */}
-            <IconButton icon="home" style={styles.bottomAppBarButton} color={styles.bottomAppBarButton.color}
+            <IconButton icon="home" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
             mode="text" onPress={() => navigation.navigate('Home')}>
             </IconButton>
-            <IconButton icon="page-previous" style={styles.bottomAppBarButton} color={styles.bottomAppBarButton.color}
-            mode="text" onPress={() => navigation.navigate('Settings')}>
+            <IconButton icon="page-previous" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            mode="text" onPress={() => globalState.readingProgress.decrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
-            <IconButton icon="page-next" style={styles.bottomAppBarButton} color={styles.bottomAppBarButton.color}
-            mode="text" onPress={() => navigation.navigate('Settings')}>
+            <IconButton icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            mode="text" onPress={() => globalState.readingProgress.incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
-            <IconButton icon="playlist-check" style={styles.bottomAppBarButton} color={styles.bottomAppBarButton.color}
-              mode="text" onPress={() => navigation.navigate('Settings')}>
+            <IconButton icon="playlist-check" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+              mode="text" onPress={() => globalState.readingProgress.incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
-            <IconButton icon="note-text" style={styles.bottomAppBarButton} color={styles.bottomAppBarButton.color}
-            mode="text" onPress={() => navigation.navigate('Epistles')}>
+            <IconButton icon="note-text" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            mode="text" onPress={() => navigation.navigate(globalState.readingProgress.nextReadingCategory(ReadingCategory[route.name]))}>
             </IconButton>
           </View>
           <FAB style={styles.fab}
             icon="play"
-            onPress={() => console.log('fab wisdom')}
+            onPress={() => console.log('//TODO: play audio')}
           />
           <View style={styles.bottomAppBarHole}>
             <Image source={require('./../assets/images/bottom-app-bar-hole-orange-big5.png')} style={styles.bottomAppBarHoleImage} />
@@ -196,7 +196,9 @@ const styles = StyleSheet.create({
   },
   bottomAppBarButton: {
     backgroundColor:  '#ff9800',
-    color: 'rgba(0,0,0,0.87)',
+    //color: 'rgba(0,0,0,0.87)',
+    color: "rgba(0,0,0,0.99)",
+    iconColor: "darkgray"
   },
   bottomAppBarButtonContent: {
     backgroundColor: '#339800',
