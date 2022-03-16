@@ -60,6 +60,7 @@ export default function useReadingProgress() {
         } else {
             readingDay++
         }
+        console.log('incrementReadingByCategory', readingCategory, readingMonth, readingDay)
         updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
     const decrementReadingByCategory = (readingCategory: ReadingCategory) => {

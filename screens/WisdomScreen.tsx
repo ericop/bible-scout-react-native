@@ -4,11 +4,11 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import ReadingCard from '../components/ReadingCard';
 
-export default function WisdomScreen() {
+export default function WisdomScreen(props: any) {
 
   return (
     <View style={styles.container}>
-      <ReadingCard title='Wisdom' />
+      <ReadingCard title='Wisdom' {...props} />
     </View>
   );
 }

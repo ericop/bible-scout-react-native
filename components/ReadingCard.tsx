@@ -13,26 +13,30 @@ import globalState from '../hooks/globalState';
 import {BibleMediaService} from '../assets/services/BibleMediaService';
 import AppBarBottom from './AppBarBottom';
 
-export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'>) {
+export default function ReadingCard(props: any) {
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<BibleTextVerse[]>([]);
   const [reading, setReading] = useState<{month: number, day: number}>([]);
-  const route = useRoute();
+  //const route = useRoute();
   // Note: the empty deps array [] means ...3DENGESVN1ET
   // this useEffect will run once
   // similar to componentDidMount()
+  let {readingProgress, navigation, route, title} = props
+  console.log('ReadingCard props', props)
 
   useEffect(() => {
-    console.log('globalState.readingProgress:',globalState.readingProgress)
-    console.log('globalState.readingProgress.readingProgress:',globalState.readingProgress.readingProgress)
+    console.log('app > readingProgress:',readingProgress)
     console.log('route:',route)
+    console.log('ReadingCategory[route.name]:',ReadingCategory[route.name])
+    let readingCat = ReadingCategory[route.name] as string;
+    console.log('readingCat', readingCat)
     let bibleService = BibleMediaService()
     let audioBibleVersion = ''
     let textBibleVersion = ''
-    let reading = globalState.readingProgress.getReadingProgress(ReadingCategory[route.name])
-    setReading(reading)
+    let reading = readingProgress[readingCat]
     console.log('reading:', reading)
+    setReading(reading)
 
     let verseInfo: {day: number, type: string, verse: string } = bibleService.getDiscipleShipJournalVerse(ReadingCategory[route.name], reading.month, reading.day, )
     console.log('verseInfo',verseInfo)
@@ -83,7 +87,7 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
         setError({message:`${err} If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
     })
   }, 
-  [])
+  [readingProgress])
 
   if (error !== null) {
     return <Text>Error: {error.message}</Text>;

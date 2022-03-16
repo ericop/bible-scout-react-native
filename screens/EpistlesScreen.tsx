@@ -4,11 +4,11 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import ReadingCard from '../components/ReadingCard';
 
-export default function EpistlesScreen() {
+export default function EpistlesScreen(props: any) {
 
   return (
     <View style={styles.container}>
-      <ReadingCard title='Epistles' />
+      <ReadingCard title='Epistles' {...props} />
     </View>
   );
 }
