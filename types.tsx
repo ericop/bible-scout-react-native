@@ -9,7 +9,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RootStackParamList { }
   }
 }
 
@@ -39,33 +39,45 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   NativeStackScreenProps<RootStackParamList>
 >;
 
-export enum ReadingCategory {
-  LawAndProphets = 'lawAndProphets',
-  Wisdom = 'wisdom',
-  Gospels = 'gospels',
-  Epistles = 'epistles'
-}
+// export enum ReadingCategory {
+//   LawAndProphets = 'lawAndProphets',
+//   Wisdom = 'wisdom',
+//   Gospels = 'gospels',
+//   Epistles = 'epistles'
+// }
+
+export const ReadingCategory = {
+  LawAndProphets : 'lawAndProphets',
+  Wisdom : 'wisdom',
+  Gospels : 'gospels',
+  Epistles : 'epistles'
+} as const;
+
+export type CategoryProgress = { month: number, day: number }
 
 export type ReadingState = {
-  lawAndProphets: { month: number, day: number },
-  wisdom: { month: number, day: number },
-  gospels: { month: number, day: number },
-  epistles: { month: number, day: number }
+  lawAndProphets: CategoryProgress,
+  wisdom: CategoryProgress,
+  gospels: CategoryProgress,
+  epistles: CategoryProgress
+}
+
+export type ReadingProgress = {
+  readingProgress: ReadingState
+  getReadingProgress: (readingCategory: ReadingState) => CategoryProgress,
+  updateReadingProgress: (readingCategory: ReadingState, month: number, day: number) => void,
+  incrementReadingByCategory: (readingCategory: ReadingState) => void,
+  decrementReadingByCategory: (readingCategory: ReadingState) => void,
+  nextReadingCategory: (readingCategory: ReadingState) => string
 }
 
 export type GlobalState = {
-    readingProgress: () => {
-        getReadingProgress: (readingCategory: ReadingState) => { month: number, day: number },
-        updateReadingProgress: (readingCategory: ReadingState, month: number, day: number) => void,
-        incrementReadingByCategory: (readingCategory: ReadingState) => void,
-        decrementReadingByCategory: (readingCategory: ReadingState) => void,
-        nextReadingCategory: (readingCategory: ReadingState) => string
-    }
-  };
+  readingState: ReadingProgress
+};
 
-  export type BibleTextVerse = {
-    book: string, 
-    chapter: string, 
-    verse: string,
-    text: string
-  }
+export type BibleTextVerse = {
+  book: string,
+  chapter: string,
+  verse: string,
+  text: string
+}

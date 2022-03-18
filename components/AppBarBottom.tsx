@@ -25,12 +25,12 @@ export default function AppBarBottom() {
   // similar to componentDidMount()
 
   useEffect(() => {
-    console.log('bot globalState.readingProgress:',globalState.readingProgress)
+    console.log('bot globalState.readingState:',globalState.readingState)
     console.log('bot route:',route)
     let bibleService = BibleMediaService()
     let audioBibleVersion = ''
     let textBibleVersion = ''
-    let reading = globalState.readingProgress.getReadingProgress(ReadingCategory[route.name])
+    let reading = globalState.readingState.getReadingProgress(ReadingCategory[route.name])
     setReading(reading)
     console.log('bot reading:', reading)
 
@@ -99,16 +99,16 @@ export default function AppBarBottom() {
             mode="text" onPress={() => navigation.navigate('Home')}>
             </IconButton>
             <IconButton icon="page-previous" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => globalState.readingProgress.decrementReadingByCategory(ReadingCategory[route.name])}>
+            mode="text" onPress={() => globalState.readingState.decrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => globalState.readingProgress.incrementReadingByCategory(ReadingCategory[route.name])}>
+            mode="text" onPress={() => globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="playlist-check" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-              mode="text" onPress={() => globalState.readingProgress.incrementReadingByCategory(ReadingCategory[route.name])}>
+              mode="text" onPress={() => globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="note-text" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => navigation.navigate(globalState.readingProgress.nextReadingCategory(ReadingCategory[route.name]))}>
+            mode="text" onPress={() => navigation.navigate(globalState.readingState.nextReadingCategory(ReadingCategory[route.name]))}>
             </IconButton>
           </View>
           <FAB style={styles.fab}

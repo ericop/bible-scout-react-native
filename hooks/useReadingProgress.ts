@@ -11,10 +11,10 @@ export default function useReadingProgress() {
         epistles = 'epistles'
     }
     type ReadingState = {
-        lawAndProphets: { month: number, day: number },
-        wisdom: { month: number, day: number },
-        gospels: { month: number, day: number },
-        epistles: { month: number, day: number }
+        lawAndProphets: CategoryProgress,
+        wisdom: CategoryProgress,
+        gospels: CategoryProgress,
+        epistles: CategoryProgress
     }
 
     const defaultReadingState: ReadingState = {
@@ -35,10 +35,11 @@ export default function useReadingProgress() {
     }
     const updateReadingProgress = (readingCategory: ReadingCategory, month: number, day: number) => {
         let progress = readingProgress // all categories
+        // immutable pattern with spread object operator
         let updatedProgress = { ...progress as unknown as ReadingState,
             [readingCategory] : {month: month, day: day}
         }
-        console.log('setReadingProgress', updatedProgress)
+        console.log('updateReadingProgress => setReadingProgress',readingProgress, updatedProgress)
         setReadingProgress(updatedProgress)
         //return updatedProgress
     }

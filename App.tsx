@@ -10,34 +10,23 @@ import Colors from './constants/Colors';
 import Theme from './constants/Themes';
 import globalState from './hooks/globalState';
 import useReadingProgress from './hooks/useReadingProgress';
-import { GlobalState } from './types';
+import { GlobalState, ReadingProgress } from './types';
 
 export default function App() {
-  let {
-    readingProgress,
-    getReadingProgress,
-    updateReadingProgress,
-    incrementReadingByCategory,
-    decrementReadingByCategory,
-    nextReadingCategory
-} = useReadingProgress();
+  globalState.readingState = useReadingProgress() as ReadingProgress;
 
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
-  useEffect(() => {
-    console.log('App.useEffect > readingProgress', readingProgress)
-  },[readingProgress])
 
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
 <PaperProvider theme={colorScheme === 'dark'? Theme.dark : Theme.light}>
-<SafeAreaProvider>
-<Navigation colorScheme={colorScheme} readingProgress={readingProgress} />
-<StatusBar />
-</SafeAreaProvider>
+  <SafeAreaProvider>
+  <Navigation colorScheme={colorScheme} />
+  <StatusBar />
+  </SafeAreaProvider>
 </PaperProvider>
     );
   }
