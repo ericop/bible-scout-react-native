@@ -19,7 +19,7 @@ export default function ReadingCard(props: any) {
   const [items, setItems] = useState<BibleTextVerse[]>([]);
   const [reading, setReading] = useState<CategoryProgress>({month:1, day:1});
   //const route = useRoute();
-  // Note: the empty deps array [] means ...3DENGESVN1ET
+  // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
   let { navigation, route, title} = props
@@ -108,7 +108,11 @@ export default function ReadingCard(props: any) {
                />
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
-                <Text>{JSON.stringify(globalState.readingState.readingProgress)}</Text>
+                <Text style={styles.verseNumber}>{JSON.stringify(globalState.readingState.readingProgress)}</Text>
+                <FAB icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            onPress={() => {
+              return globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name]);
+            }}></FAB>
                 <Text>
                   {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
