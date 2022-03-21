@@ -16,27 +16,6 @@ The Bible Scout App was created to help you scout (to examine, seek and observe)
 - Press `w` to open the app in your browser (pressing [other letters will let you run on iOS or Android](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet))
 - Press `Ctrl+C` to cancel the the development server
 
-### Reading Plans
-The Discipleship Journal Bible Reading Plan
-
-Our first reading plan, [The Discipleship Journal Bible Reading Plan](https://www.navigators.org/wp-content/uploads/2017/04/Discipleship-Journal-Bible-Reading-Plan-9781617479083.pdf) takes you on a special journey through the Bible.
-
-- Every day the readings come from four different sections of Scripture, keeping things fresh with diverse view points allowing you to go broad and deep.
-For example, the reading for Day 1 includes:
-A) [Law And Prophets] Genesis 1-2
-B) [Wisdom] Psalms 1
-C) [Gospels] Matthew 1:1-17
-D) [Epistles] Acts 1:1-11
-
-- This plan follows a monthly cycle with only 25 scheduled reading days. We all miss days, each month you have days built in to catch up.
-
-- If you finish the month’s readings with all your free days left, you can loop back to memorize a key chapter you like, dig deeper on passages that challenged or intrigued you, or consider building these activities into Sundays next month.
-
-- If reading through the entire Bible in one year looms big, break it down as needed, like picking "Wisdom" and "Epistles" this year, and next year tackling "Gospels" and "Law and Prophets".
-
-- [Further reasons](https://www.desiringgod.org/interviews/a-new-year-a-new-bible-reading-plan) why you might consider The Discipleship Journal Bible Reading Plan, as laid out by John Piper
-
-
 ## Screenshot on Android
 <!-- ![Screenshot_20211118-222230_Expo Go](https://user-images.githubusercontent.com/5218249/142559656-4566201e-f34b-4a0b-9891-78336c3e95a5.jpg) -->
 <img src="https://user-images.githubusercontent.com/5218249/142559656-4566201e-f34b-4a0b-9891-78336c3e95a5.jpg" width="320" />
@@ -65,6 +44,25 @@ D) [Epistles] Acts 1:1-11
   - [ ] (Crossways Chronological Bible Reading Plan](https://www.crossway.org/articles/download-a-free-bible-reading-plan-for-2017/)
 - [ ] Partner with others to make visual ? (https://visualunit.me/)
 
+## Reading Plans
+The Discipleship Journal Bible Reading Plan
+
+Our first reading plan, [The Discipleship Journal Bible Reading Plan](https://www.navigators.org/wp-content/uploads/2017/04/Discipleship-Journal-Bible-Reading-Plan-9781617479083.pdf) takes you on a special journey through the Bible.
+
+- Every day the readings come from four different sections of Scripture, keeping things fresh with diverse view points allowing you to go broad and deep.
+For example, the reading for Day 1 includes:
+   1. [Law And Prophets] Genesis 1-2
+   1. [Wisdom] Psalms 1
+   1. [Gospels] Matthew 1:1-17
+   1. [Epistles] Acts 1:1-11
+
+- This plan follows a monthly cycle with only 25 scheduled reading days. We all miss days, each month you have days built in to catch up.
+
+- If you finish the month’s readings with all your free days left, you can loop back to memorize a key chapter you like, dig deeper on passages that challenged or intrigued you, or consider building these activities into Sundays next month.
+
+- If reading through the entire Bible in one year looms big, break it down as needed, like picking "Wisdom" and "Epistles" this year, and next year tackling "Gospels" and "Law and Prophets".
+
+- [Further reasons](https://www.desiringgod.org/interviews/a-new-year-a-new-bible-reading-plan) why you might consider The Discipleship Journal Bible Reading Plan, as laid out by John Piper
 
 ## Special Thanks
 To [Digital Bible Platform](https://www.digitalbibleplatform.com/about) for partnering with this app and giving us access to the Bible in text and audio formats.
