@@ -8,10 +8,11 @@ The Bible Scout App was created to help you scout (to examine, seek and observe)
    - [Node.js LTS release](https://nodejs.org/en/)
    - [git](https://git-scm.com/)
    - [Watchman](https://facebook.github.io/watchman/docs/install#buildinstall) for macOS or Linux users
-   - [Yarn](https://classic.yarnpkg.com/en/docs/install)
+   - `npm install --global yarn` [Yarn](https://classic.yarnpkg.com/en/docs/install) is the preferred way to 
 - `npm install --global expo-cli`
 - `git clone` this repo
-- `yarn` which is the preferred way to install dependencies, **not** `npm install`
+- `yarn` which install dependencies
+  > ⚠  To avoid a tricky "Gotcha" conflict with yarn and npm managaging local dependencies, stick with `yarn` from here on out, so that `npm install` with its `package-lock.json` isn't at odds with yarn's `yarn.lock`
 - `expo start` which will start the development server and will enable hot reload
 - Press `w` to open the app in your browser (pressing [other letters will let you run on iOS or Android](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet))
 - Press `Ctrl+C` to cancel the the development server
