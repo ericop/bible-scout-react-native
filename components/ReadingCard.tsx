@@ -6,33 +6,34 @@ import { Text, View } from '../components/Themed';
 import { IconButton, Card, FAB } from 'react-native-paper';
 import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import { RootTabScreenProps, ReadingCategory, BibleTextVerse } from '../types';
+import { RootTabScreenProps, ReadingCategory, BibleTextVerse, CategoryProgress } from '../types';
 //import navigation from '../navigation';
 import {useRoute} from '@react-navigation/native';
 import globalState from '../hooks/globalState';
 import {BibleMediaService} from '../assets/services/BibleMediaService';
 import AppBarBottom from './AppBarBottom';
 
-export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'>) {
+export default function ReadingCard(props: any) {
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<BibleTextVerse[]>([]);
-  const [reading, setReading] = useState<{month: number, day: number}>([]);
-  const route = useRoute();
-  // Note: the empty deps array [] means ...3DENGESVN1ET
+  const [reading, setReading] = useState<CategoryProgress>({month:1, day:1});
+  //const route = useRoute();
+  // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
-
-  useEffect(() => {
-    console.log('globalState.readingProgress:',globalState.readingProgress)
-    console.log('globalState.readingProgress.readingProgress:',globalState.readingProgress.readingProgress)
-    console.log('route:',route)
+  let { navigation, route, title} = props
+  let readingProgress = globalState.readingState.readingProgress
+  console.log('ReadingCard props', props)
+  
+  const fetchData = React.useCallback(() => {
+    let readingCat = ReadingCategory[route.name] as string;
+    console.log('readingCat', readingCat)
     let bibleService = BibleMediaService()
     let audioBibleVersion = ''
     let textBibleVersion = ''
-    let reading = globalState.readingProgress.getReadingProgress(ReadingCategory[route.name])
-    setReading(reading)
     console.log('reading:', reading)
+    setReading(reading)
 
     let verseInfo: {day: number, type: string, verse: string } = bibleService.getDiscipleShipJournalVerse(ReadingCategory[route.name], reading.month, reading.day, )
     console.log('verseInfo',verseInfo)
@@ -82,8 +83,13 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
         console.error('call failed with error:', err)
         setError({message:`${err} If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
     })
+  },[globalState.readingState.readingProgress])
+
+
+  useEffect(() => {
+    fetchData()
   }, 
-  [])
+  [fetchData])
 
   if (error !== null) {
     return <Text>Error: {error.message}</Text>;
@@ -102,6 +108,11 @@ export default function ReadingCard({ navigation }:RootTabScreenProps<'Epistles'
                />
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
+                <Text style={styles.verseNumber}>{JSON.stringify(globalState.readingState.readingProgress)}</Text>
+                <FAB icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            onPress={() => {
+              return globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name]);
+            }}></FAB>
                 <Text>
                   {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {

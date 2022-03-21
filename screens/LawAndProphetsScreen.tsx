@@ -4,11 +4,11 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import ReadingCard from '../components/ReadingCard';
 
-export default function LawAndProphetsScreen() {
-
+export default function LawAndProphetsScreen(props: any) {
+  console.log('LawAndProphetsScreen props', props)
   return (
     <View style={styles.container}>
-      <ReadingCard title='LawAndProphets' />
+      <ReadingCard title='LawAndProphets' {...props} />
     </View>
   );
 }

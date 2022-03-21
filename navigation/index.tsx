@@ -19,12 +19,13 @@ import LinkingConfiguration from './LinkingConfiguration';
 
 import DrawerNavigator from './DrawerNavigator';
 
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+export default function Navigation({ colorScheme, ...rest}: any) {
+  console.log('Navigation rest', {...rest})
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <DrawerNavigator />
+      <DrawerNavigator {...rest}/>
     </NavigationContainer>
   );
 }

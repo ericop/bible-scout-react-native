@@ -25,21 +25,22 @@ import Themes from "../constants/Themes";
 
 const MyDrawer = createDrawerNavigator();
 
-export default function DrawerNavigator(propsIn: any) {
+export default function DrawerNavigator(props: any) {
+  console.log('DrawerNavigator props', props)
   return (
     <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props} />} screenOptions={{
       headerStyle: {
-        backgroundColor: propsIn.theme === 'dark' ? Themes.dark.colors.accent : Themes.light.colors.primary
+        backgroundColor: props.theme === 'dark' ? Themes.dark.colors.accent : Themes.light.colors.primary
       }, headerTitleStyle: {
         color: Themes.light.colors.text
       }  }}>
-      <MyDrawer.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }}/>
-      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'LawAndProphets',}} />
-      <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom' }} />
-      <MyDrawer.Screen name="Gospels" component={GospelsScreen} options={{ title: 'Gospels' }} />
-      <MyDrawer.Screen name="Epistles" component={EpistlesScreen} options={{ title: 'Epistles' }} />
+      <MyDrawer.Screen name="Home" component={HomeScreen} options={{ title: 'Home', ...props }} />
+      <MyDrawer.Screen name="LawAndProphets" component={LawAndProphetsScreen} options={{title: 'LawAndProphets', ...props}} />
+      <MyDrawer.Screen name="Wisdom" component={WisdomScreen} options={{ title: 'Wisdom', ...props }} />
+      <MyDrawer.Screen name="Gospels" component={GospelsScreen} options={{ title: 'Gospels', ...props }} />
+      <MyDrawer.Screen name="Epistles" component={EpistlesScreen} options={{ title: 'Epistles', ...props }} />
       {/* with headerShown: false the app bar moves to the top */}
-      <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+      <MyDrawer.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings', ...props }} />
     </MyDrawer.Navigator>
   );
 }
