@@ -4,7 +4,7 @@ import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'reac
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { IconButton, Card, FAB } from 'react-native-paper';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { RootTabScreenProps, ReadingCategory, BibleTextVerse, CategoryProgress } from '../types';
 //import navigation from '../navigation';
@@ -24,9 +24,15 @@ export default function ReadingCard(props: any) {
   // similar to componentDidMount()
   let { navigation, route, title} = props
   let readingProgress = globalState.readingState.readingProgress
-  console.log('ReadingCard props', props)
+  // console.log('ReadingCard props', props)
+  // console.log('ReadingCard globalState.readingState.readingProgress', globalState.readingState.readingProgress)
   
-  const fetchData = React.useCallback(() => {
+  const readingProgressJson = JSON.stringify(globalState)
+  console.log('readingProgressJson', readingProgressJson)
+
+  const fetchData = useCallback(() => {
+    console.log('ReadingCard useCallback', globalState.readingState.readingProgress)
+    console.log('useCallback readingProgressJson', readingProgressJson)
     let readingCat = ReadingCategory[route.name] as string;
     console.log('readingCat', readingCat)
     let bibleService = BibleMediaService()
@@ -83,13 +89,14 @@ export default function ReadingCard(props: any) {
         console.error('call failed with error:', err)
         setError({message:`${err} If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
     })
-  },[globalState.readingState.readingProgress])
-
+  },[reading, route.name, readingProgressJson, globalState])
 
   useEffect(() => {
+    console.log('ReadingCard useEffect', globalState.readingState.readingProgress)
+    console.log('ReadingCard readingProgressJson', readingProgressJson)
     fetchData()
   }, 
-  [fetchData])
+  [fetchData, readingProgressJson, globalState])
 
   if (error !== null) {
     return <Text>Error: {error.message}</Text>;
@@ -108,11 +115,15 @@ export default function ReadingCard(props: any) {
                />
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
+
+                {/* debug JSON of globalState.readingState.readingProgress BEGIN */}
                 <Text style={styles.verseNumber}>{JSON.stringify(globalState.readingState.readingProgress)}</Text>
                 <FAB icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            onPress={() => {
-              return globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name]);
-            }}></FAB>
+                  onPress={() => {
+                    return globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name]);
+                }}></FAB>
+                {/* debug JSON of globalState.readingState.readingProgress END */}
+
                 <Text>
                   {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {

@@ -17,6 +17,7 @@ import WisdomScreen from "../screens/WisdomScreen";
 import GospelsScreen from "../screens/GospelsScreen";
 import EpistlesScreen from "../screens/EpistlesScreen";
 import Themes from "../constants/Themes";
+import globalState from '../hooks/globalState';
 
 // https://github.com/ChanakaUOMIT/React-Native-Root-boiler-plate/blob/master/src/navigation/drawerNavigation/DrawerNavigator.js
 
@@ -26,7 +27,8 @@ import Themes from "../constants/Themes";
 const MyDrawer = createDrawerNavigator();
 
 export default function DrawerNavigator(props: any) {
-  console.log('DrawerNavigator props', props)
+  // console.log('DrawerNavigator props', props)
+  console.log('DrawerNavigator globalState.readingState.readingProgress', globalState.readingState.readingProgress)
   return (
     <MyDrawer.Navigator drawerContent={(props) => <DrawerContent {...props} />} screenOptions={{
       headerStyle: {

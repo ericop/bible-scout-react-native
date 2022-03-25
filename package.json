@@ -20,6 +20,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "axios": "^0.21.4",
+    "eslint-plugin-react-hooks": "^4.2.1-rc.3-next-033fe52b4-20220325",
     "expo": "~42.0.1",
     "expo-asset": "~8.3.2",
     "expo-constants": "~11.0.1",
@@ -43,6 +44,10 @@
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-react": "^7.29.4",
     "jest-expo": "~41.0.0-beta.0",
     "typescript": "~4.0.0"
   },
