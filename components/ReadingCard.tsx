@@ -103,11 +103,11 @@ export default function ReadingCard(props: any) {
                />
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
-                <Text style={styles.verseNumber}>{JSON.stringify(readingState)}</Text>
+                {/* <Text style={styles.verseNumber}>{JSON.stringify(readingState)}</Text>
                 <FAB icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            onPress={() => {
-              return incrementReadingByCategory(ReadingCategory[route.name]);
-            }}></FAB>
+                  onPress={() => {
+                    return incrementReadingByCategory(ReadingCategory[route.name]);
+                }}></FAB> */}
                 <Text>
                   {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {
