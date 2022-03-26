@@ -4,7 +4,7 @@ import { StyleSheet, ImageBackground, ScrollView, Dimensions, Image } from 'reac
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { IconButton, Card, FAB } from 'react-native-paper';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { RootTabScreenProps, ReadingCategory, BibleTextVerse, CategoryProgress } from '../types';
 //import navigation from '../navigation';
@@ -12,34 +12,28 @@ import {useRoute} from '@react-navigation/native';
 import globalState from '../hooks/globalState';
 import {BibleMediaService} from '../assets/services/BibleMediaService';
 import AppBarBottom from './AppBarBottom';
+import useStore from '../hooks/useStore';
 
 export default function ReadingCard(props: any) {
+  const readingState = useStore(state => state.readingState);
+  const incrementReadingByCategory = useStore(state => state.incrementReadingByCategory);
+  let { navigation, route, title} = props
+  console.log('ReadingCard props', props)
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<BibleTextVerse[]>([]);
-  const [reading, setReading] = useState<CategoryProgress>({month:1, day:1});
-  //const route = useRoute();
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
-  let { navigation, route, title} = props
-  let readingProgress = globalState.readingState.readingProgress
-  // console.log('ReadingCard props', props)
-  // console.log('ReadingCard globalState.readingState.readingProgress', globalState.readingState.readingProgress)
-  
-  const readingProgressJson = JSON.stringify(globalState)
-  console.log('readingProgressJson', readingProgressJson)
-
-  const fetchData = useCallback(() => {
-    console.log('ReadingCard useCallback', globalState.readingState.readingProgress)
-    console.log('useCallback readingProgressJson', readingProgressJson)
+  const [reading, setReading] = useState<CategoryProgress>(() =>  readingState[ReadingCategory[route.name]]);
+ 
+  useEffect(() => {
+    // fetchData()
     let readingCat = ReadingCategory[route.name] as string;
     console.log('readingCat', readingCat)
     let bibleService = BibleMediaService()
     let audioBibleVersion = ''
     let textBibleVersion = ''
+    setReading(readingState[readingCat])
     console.log('reading:', reading)
-    setReading(reading)
+    // setReading(reading)
 
     let verseInfo: {day: number, type: string, verse: string } = bibleService.getDiscipleShipJournalVerse(ReadingCategory[route.name], reading.month, reading.day, )
     console.log('verseInfo',verseInfo)
@@ -89,14 +83,8 @@ export default function ReadingCard(props: any) {
         console.error('call failed with error:', err)
         setError({message:`${err} If error continues please create an issue at https://github.com/ericop/bible-scout-react-native/issues`})
     })
-  },[reading, route.name, readingProgressJson, globalState])
-
-  useEffect(() => {
-    console.log('ReadingCard useEffect', globalState.readingState.readingProgress)
-    console.log('ReadingCard readingProgressJson', readingProgressJson)
-    fetchData()
   }, 
-  [fetchData, readingProgressJson, globalState])
+  [readingState, route.name, reading])
 
   if (error !== null) {
     return <Text>Error: {error.message}</Text>;
@@ -115,15 +103,11 @@ export default function ReadingCard(props: any) {
                />
               <Card.Content style={styles.cardContent}>
                 {/* <Paragraph> */}
-
-                {/* debug JSON of globalState.readingState.readingProgress BEGIN */}
-                <Text style={styles.verseNumber}>{JSON.stringify(globalState.readingState.readingProgress)}</Text>
+                <Text style={styles.verseNumber}>{JSON.stringify(readingState)}</Text>
                 <FAB icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-                  onPress={() => {
-                    return globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name]);
-                }}></FAB>
-                {/* debug JSON of globalState.readingState.readingProgress END */}
-
+            onPress={() => {
+              return incrementReadingByCategory(ReadingCategory[route.name]);
+            }}></FAB>
                 <Text>
                   {/* Could chain {bibleService.getText(bibleService.getDiscipleShipJournalVerse(route,globalState.readingProgress.readingProgress).map(...)} to auto render here  */}
                 {items.map((v: { verse: string, chapter: string, text: string }, idx: number) => {

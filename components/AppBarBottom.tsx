@@ -12,8 +12,14 @@ import {useRoute} from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import globalState from '../hooks/globalState';
 import {BibleMediaService} from '../assets/services/BibleMediaService';
+import useStore from '../hooks/useStore';
 
 export default function AppBarBottom() {
+  const readingState = useStore(state => state.readingState);
+  const incrementReadingByCategory = useStore(state => state.incrementReadingByCategory);
+  const decrementReadingByCategory = useStore(state => state.decrementReadingByCategory);
+  const nextReadingCategory = useStore(state => state.nextReadingCategory);
+
   const [error, setError] = useState<any>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [items, setItems] = useState<BibleTextVerse[]>([]);
@@ -99,16 +105,16 @@ export default function AppBarBottom() {
             mode="text" onPress={() => navigation.navigate('Home')}>
             </IconButton>
             <IconButton icon="page-previous" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => globalState.readingState.decrementReadingByCategory(ReadingCategory[route.name])}>
+            mode="text" onPress={() => decrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name])}>
+            mode="text" onPress={() => incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="playlist-check" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-              mode="text" onPress={() => globalState.readingState.incrementReadingByCategory(ReadingCategory[route.name])}>
+              mode="text" onPress={() => incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="note-text" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
-            mode="text" onPress={() => navigation.navigate(globalState.readingState.nextReadingCategory(ReadingCategory[route.name]))}>
+            mode="text" onPress={() => navigation.navigate(nextReadingCategory(ReadingCategory[route.name]))}>
             </IconButton>
           </View>
           <FAB style={styles.fab}

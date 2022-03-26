@@ -10,6 +10,9 @@ export default function useReadingProgress() {
         gospels = 'gospels',
         epistles = 'epistles'
     }
+    type CategoryProgress = {
+        month: number, day: number
+    }
     type ReadingState = {
         lawAndProphets: CategoryProgress,
         wisdom: CategoryProgress,
@@ -36,10 +39,11 @@ export default function useReadingProgress() {
     const updateReadingProgress = (readingCategory: ReadingCategory, month: number, day: number) => {
         let progress = readingProgress // all categories
         // immutable pattern with spread object operator
-        let updatedProgress = { ...progress as unknown as ReadingState,
-            [readingCategory] : {month: month, day: day}
+        let updatedProgress = {
+            ...progress as unknown as ReadingState,
+            [readingCategory]: { month: month, day: day }
         }
-        console.log('updateReadingProgress => setReadingProgress',readingProgress, updatedProgress)
+        console.log('updateReadingProgress => setReadingProgress', readingProgress, updatedProgress)
         setReadingProgress(updatedProgress)
         //return updatedProgress
     }
@@ -47,7 +51,7 @@ export default function useReadingProgress() {
     const incrementReadingByCategory = (readingCategory: ReadingCategory) => {
         let progress = getReadingProgress(readingCategory)
 
-        let {month: readingMonth, day: readingDay } = progress
+        let { month: readingMonth, day: readingDay } = progress
 
         let shouldGoForwardAMonth = readingDay === 25 && readingMonth < 12
         let shouldStartNewYear = readingDay === 25 && readingMonth === 12
@@ -79,7 +83,7 @@ export default function useReadingProgress() {
         }
         updateReadingProgress(readingCategory, readingMonth, readingDay)
     }
-    const nextReadingCategory =  (readingCategory: ReadingCategory) : string =>  {
+    const nextReadingCategory = (readingCategory: ReadingCategory): string => {
         switch (readingCategory) {
             case ReadingCategory.lawAndProphets:
                 return 'Wisdom'
