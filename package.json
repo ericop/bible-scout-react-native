@@ -23,6 +23,7 @@
     "eslint-plugin-react-hooks": "^4.2.1-rc.3-next-033fe52b4-20220325",
     "expo": "~42.0.1",
     "expo-asset": "~8.3.2",
+    "expo-av": "^10.2.1",
     "expo-constants": "~11.0.1",
     "expo-font": "~9.2.1",
     "expo-linking": "~2.3.1",

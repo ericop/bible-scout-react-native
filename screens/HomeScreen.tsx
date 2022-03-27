@@ -6,17 +6,18 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import { Appbar, Button } from 'react-native-paper';
 import { DrawerActions } from '@react-navigation/native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-native-paper';
 import { ImageBackground } from 'react-native';
+import { Audio } from 'expo-av';
 
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   const _handleSearch = () => console.log('Searching');
 
   const [testData, setTestData] = useState('');
-  const callTestApi = async () => {
+  const callTextApi = async () => {
     try {
       var resp = await axios({
         url: 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy',
@@ -32,8 +33,51 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
     catch (err) {
       console.error('call failed with error:', err)
     }
-
   }
+  const [audioData, setAudioData] = useState();
+
+  // async function playSound() {
+  //   let audioUrl = 'https://httpbiblereadingpalrequest.azurewebsites.net/api/v2?urlText=http%3A%2F%2Fcloud.faithcomesbyhearing.com%2Fmp3audiobibles2%2FENGESVN1DA%2FB01___01_Matthew_____ENGESVN1DA.mp3&code=UCgA0aEhZUMUtOmZV3WORgpB9EaJ05qLHJZV6EKPu%2FIto84LKpLKsg%3D%3D'
+  //   console.log('Loading Sound');
+  //   const { sound } = await Audio.Sound.createAsync(
+  //     //TODO solve error with https://docs.expo.dev/versions/latest/sdk/audio/#request-recording-permissions
+  //     // eslint-disable-next-line @typescript-eslint/no-var-requires
+  //     require(audioUrl)
+  //   );
+  //   setAudioData(sound);
+
+  //   console.log('Playing Sound');
+  //   await sound.playAsync();
+  // }
+
+  const callAudioApi = async () => {
+    try {
+      var resp = await axios({
+        url: 'https://dcu73qiiyi.execute-api.us-east-2.amazonaws.com/default/bible-scout-proxy',
+        params: {
+          urlText: 'https%3A%2F%2Fdbt.io%2Ftext%2Fverse%3Freply%3Djson%26v%3D2%26dam_id%3DENGESVO1ET%26book_id%3DPs%26chapter_id%3D1'
+        },
+        method: 'GET',
+        headers: { 'x-api-key': 'Genesis1-2InTheBeginningGodCreated' }
+      })
+      console.log('axios resp:', resp.data)
+      setTestData(resp.data[2].verse_text)
+    }
+    catch (err) {
+      console.error('call failed with error:', err)
+    }
+  }
+
+  useEffect(() => {
+    // audioData
+    //   ? () => {
+    //     console.log('Unloading Sound');
+    //     audioData.unloadAsync();
+    //   }
+    //   : undefined;
+  },
+    [audioData])
+
 
   return (
     <ImageBackground source={require('./../assets/images/bible-open-to-john.jpg')} resizeMode="cover" style={styles.background}>
@@ -61,10 +105,13 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
             <Button mode="contained" onPress={() => navigation.navigate('Settings')}>
               Go to Settings
             </Button>
-            <Button onPress={() => callTestApi()}>
-              call test API
+            <Button onPress={() => callTextApi()}>
+              call text API
             </Button>
             <Text>{testData}</Text>
+            {/* <Button onPress={() => playSound()}>
+              call audio API
+            </Button> */}
           </Card.Content>
         </Card>
       </ScrollView>
