@@ -107,13 +107,13 @@ export default function AppBarBottom() {
             <IconButton icon="page-previous" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
             mode="text" onPress={() => decrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
-            <IconButton icon="page-next" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            <IconButton icon="page-next-outline" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
             mode="text" onPress={() => incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
             <IconButton icon="playlist-check" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
               mode="text" onPress={() => incrementReadingByCategory(ReadingCategory[route.name])}>
             </IconButton>
-            <IconButton icon="note-text" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
+            <IconButton icon="book-open-page-variant" style={styles.bottomAppBarButton} color="rgba(0,0,0,0.87)"
             mode="text" onPress={() => navigation.navigate(nextReadingCategory(ReadingCategory[route.name]))}>
             </IconButton>
           </View>

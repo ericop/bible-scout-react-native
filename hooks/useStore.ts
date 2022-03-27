@@ -76,14 +76,20 @@ const useStore = create(persist(
         case ReadingCategory.Gospels:
           return 'Epistles'
         case ReadingCategory.Epistles:
-          default:
+        default:
           return 'Home'
       }
+    },
+
+    _hasHydrated: false,
+    setHasHydrated: state => {
+      set({ _hasHydrated: state });
     }
   }),
   {
     name: 'bibleScoutReadingProgress',
-    getStorage: () => AsyncStorage
+    getStorage: () => AsyncStorage,
+    onRehydrateStorage: () => state => state.setHasHydrated(true)
   }
 ))
 
